@@ -1,0 +1,14 @@
+<gsic-title [title]="title"></gsic-title>
+
+<div class="clearfix">
+  <span class="float-left">12 De abril</span>
+
+  <button type="button" class="btn btn-primary float-right">Apuntate a este evento</button>
+</div>
+
+<ng-template ngFor let-event [ngForOf]="events">
+  <gsic-event [event]="event" class="m-4"></gsic-event>
+</ng-template>
+<div class="text-right">
+  <button type=" button " class=" text-right btn btn-primary ">Eventos Anteriores</button>
+</div>

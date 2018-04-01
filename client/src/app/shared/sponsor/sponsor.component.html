@@ -1,0 +1,15 @@
+<div class="card text-center  border-primary">
+  <div class="card-header border-primary">
+    <h2>{{sponsor.title}}</h2>
+  </div>
+  <div class="card-body">
+    <p class="card-text" *ngFor="let feature of sponsor.features">
+      <i *ngIf="feature.status" class="fa fa-check"></i>
+      <i *ngIf="!feature.status" class="fa fa-times"></i>
+      {{feature.description}}
+    </p>
+  </div>
+  <div class="card-footer border-primary">
+    <h3 class="card-title">{{sponsor.price}}</h3>
+  </div>
+</div>

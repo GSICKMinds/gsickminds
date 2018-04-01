@@ -1,0 +1,24 @@
+<div class="modal-header">
+  <h4 class="modal-title">Hi there!</h4>
+  <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="modal-body">
+  <form class="form-inline" [formGroup]="eventForm">
+    <div class="form-group">
+      <div class="input-group">
+        <input class="form-control" placeholder="yyyy-mm-dd" name="dp" formControlName="date" ngbDatepicker #d="ngbDatepicker">
+        <div class="input-group-append">
+          <button class="btn btn-outline-secondary" (click)="d.toggle()" type="button">
+            <li class="fa fa-calendar"></li>
+          </button>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+
+<div class="modal-footer ">
+  <button type="button " class="btn btn-outline-dark " (click)="activeModal.close(eventForm.value) ">Añadir</button>
+</div>
