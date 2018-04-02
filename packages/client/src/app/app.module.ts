@@ -1,10 +1,11 @@
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { NgbModule, NgbDateAdapter, NgbDateStruct } from '@ng-bootstrap/ng-bootstrap';
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule, Injectable } from '@angular/core';
+import { NgModule, Injectable, LOCALE_ID } from '@angular/core';
 import { AppComponent } from './app.component';
 import { FooterComponent } from './layout/footer/footer.component';
 import { HomeComponent } from './pages/home/home.component';
-import { VenueComponent } from './pages/venue/venue.component';
+
 import { EventComponent } from './shared/event/event.component';
 import { AboutComponent } from './pages/about/about.component';
 import { TeamComponent } from './pages/team/team.component';
@@ -42,6 +43,11 @@ import { AdminSpeakerDialogComponent } from './admin-speaker-dialog/admin-speake
 import { AdminEventDialogComponent } from './admin-event-dialog/admin-event-dialog.component';
 import { AdminTalkDialogComponent } from './admin-talk-dialog/admin-talk-dialog.component';
 import { SocialComponent } from './social/social.component';
+import { LoginComponent } from './login/login.component';
+import { AuthService } from './auth.service';
+import { AuthGuard } from './auth.guard';
+import { HeaderInterceptor } from './header.interceptor';
+import { VenueComponent } from './pages/venue/venue.component';
 
 @Injectable()
 export class NgbDateNativeAdapter extends NgbDateAdapter<Date> {
@@ -54,6 +60,8 @@ export class NgbDateNativeAdapter extends NgbDateAdapter<Date> {
     return date ? new Date(date.year, date.month - 1, date.day) : null;
   }
 }
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -87,6 +95,7 @@ export class NgbDateNativeAdapter extends NgbDateAdapter<Date> {
     AdminEventDialogComponent,
     AdminTalkDialogComponent,
     SocialComponent,
+    LoginComponent,
 
   ],
   imports: [
@@ -102,9 +111,13 @@ export class NgbDateNativeAdapter extends NgbDateAdapter<Date> {
     InfoService,
     EventService,
     TeamService,
+    AuthService,
     TalksService,
     SpeakersService,
-    { provide: NgbDateAdapter, useClass: NgbDateNativeAdapter }
+    AuthGuard,
+    { provide: NgbDateAdapter, useClass: NgbDateNativeAdapter },
+    { provide: HTTP_INTERCEPTORS, useClass: HeaderInterceptor, multi: true },
+    { provide: LOCALE_ID, useValue: "es" }
   ],
   entryComponents: [
     AdminEventDialogComponent,

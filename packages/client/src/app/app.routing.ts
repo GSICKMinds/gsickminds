@@ -8,11 +8,14 @@ import { AdminTeamComponent } from './admin-team/admin-team.component';
 import { AdminEventsComponent } from './admin-events/admin-events.component';
 import { AdminTalkComponent } from './admin-talk/admin-talk.component';
 import { EventComponent } from './shared/event/event.component';
+import { AuthGuard } from './auth.guard';
+import { LoginComponent } from './login/login.component';
 
 const appRoutes: Routes = [
     { path: '', component: HomeComponent, pathMatch: 'full' },
+    { path: 'login', component: LoginComponent, },
     {
-        path: 'admin', component: AdminComponent, children: [
+        path: 'admin', component: AdminComponent, canActivate: [AuthGuard], children: [
             { path: 'info', component: AdminInfoComponent, outlet: 'admin' },
             { path: 'events', component: AdminEventsComponent, outlet: 'admin' },
             { path: 'events/:id', component: AdminTalkComponent, outlet: 'admin' },

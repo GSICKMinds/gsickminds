@@ -10,8 +10,8 @@ import { jwtMiddleware } from '../common/middlewares/jwt.middleware';
     controllers: [MembersController],
     components: [MembersService],
 })
-export class MembersModule { }
-/* 
+
+
 export class MembersModule implements NestModule {
     public configure(consumer: MiddlewaresConsumer) {
         consumer
@@ -22,4 +22,4 @@ export class MembersModule implements NestModule {
                 { path: '/members/:id', method: RequestMethod.DELETE },
         );
     }
-} */
+}

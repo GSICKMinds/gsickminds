@@ -16,5 +16,3 @@ export class AboutComponent implements OnInit {
     this.info = await this.infoService.getInfo();
   }
 }
-
-}

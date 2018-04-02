@@ -11,7 +11,7 @@ import { InfoService } from './info.service';
     controllers: [InfoController],
     components: [InfoService],
 })
-/* export class InfoModule implements NestModule {
+export class InfoModule implements NestModule {
     public configure(consumer: MiddlewaresConsumer) {
         consumer
             .apply(jwtMiddleware)
@@ -20,5 +20,4 @@ import { InfoService } from './info.service';
         );
     }
 }
- */
-export class InfoModule { }
+

@@ -11,8 +11,8 @@ import { EventSchema } from './events.schema';
     controllers: [EventsController],
     components: [EventsService],
 })
-export class EventsModule { }
-/* export class EventsModule implements NestModule {
+
+export class EventsModule implements NestModule {
     public configure(consumer: MiddlewaresConsumer) {
         consumer
             .apply(jwtMiddleware)
@@ -22,4 +22,3 @@ export class EventsModule { }
         );
     }
 }
- */
