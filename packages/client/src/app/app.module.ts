@@ -41,6 +41,7 @@ import { AdminSpeakerFormComponent } from './admin-speaker-form/admin-speaker-fo
 import { AdminSpeakerDialogComponent } from './admin-speaker-dialog/admin-speaker-dialog.component';
 import { AdminEventDialogComponent } from './admin-event-dialog/admin-event-dialog.component';
 import { AdminTalkDialogComponent } from './admin-talk-dialog/admin-talk-dialog.component';
+import { SocialComponent } from './social/social.component';
 
 @Injectable()
 export class NgbDateNativeAdapter extends NgbDateAdapter<Date> {
@@ -85,6 +86,7 @@ export class NgbDateNativeAdapter extends NgbDateAdapter<Date> {
     AdminSpeakerDialogComponent,
     AdminEventDialogComponent,
     AdminTalkDialogComponent,
+    SocialComponent,
 
   ],
   imports: [

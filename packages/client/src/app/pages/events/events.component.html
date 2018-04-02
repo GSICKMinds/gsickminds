@@ -1,12 +1,11 @@
 <gsic-title [title]="title"></gsic-title>
 
 <div class="clearfix">
-  <span class="float-left">12 De abril</span>
-
+  <span class="float-left">{{events?.date | date: 'fullDate'}}</span>
   <button type="button" class="btn btn-primary float-right">Apuntate a este evento</button>
 </div>
 
-<ng-template ngFor let-event [ngForOf]="events">
+<ng-template ngFor let-event [ngForOf]="events?.talks">
   <gsic-event [event]="event" class="m-4"></gsic-event>
 </ng-template>
 <div class="text-right">

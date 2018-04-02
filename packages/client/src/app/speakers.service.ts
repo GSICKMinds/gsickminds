@@ -1,22 +1,23 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import 'rxjs/add/operator/toPromise';
+import { environment } from '../environments/environment';
 
 @Injectable()
 export class SpeakersService {
-  private talksUrl = 'http://localhost:3000/events';
+  private collectionUrl = '/events';
 
   constructor(private http: HttpClient) { }
 
   getAll(eventId, talkId) {
-    return this.http.get(`${this.talksUrl}/${eventId}/talks/${talkId}/speakers`).toPromise();
+    return this.http.get(`${environment.apiUrl}${this.collectionUrl}/${eventId}/talks/${talkId}/speakers`).toPromise();
   }
 
   update(eventId, talkId, speakerId, speaker) {
-    return this.http.put(`${this.talksUrl}/${eventId}/talks/${talkId}/speakers/${speakerId}`, speaker).toPromise();
+    return this.http.put(`${environment.apiUrl}${this.collectionUrl}/${eventId}/talks/${talkId}/speakers/${speakerId}`, speaker).toPromise();
   }
 
   create(eventId, talkId, speaker) {
-    return this.http.post(`${this.talksUrl}/${eventId}/talks/${talkId}/speakers`, speaker).toPromise();
+    return this.http.post(`${environment.apiUrl}${this.collectionUrl}/${eventId}/talks/${talkId}/speakers`, speaker).toPromise();
   }
 }
