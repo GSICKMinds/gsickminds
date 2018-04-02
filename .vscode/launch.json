@@ -9,8 +9,7 @@
             "request": "launch",
             "name": "Debug Node (Typescript)",
             "protocol": "inspector",
-            "program": "${workspaceRoot}/src/main.ts",
-            "cwd": "${workspaceRoot}",
+            "program": "${workspaceRoot}/packages/server/src/main.ts",
             "runtimeArgs": [
                 "--nolazy"
             ],
