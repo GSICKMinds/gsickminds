@@ -1,8 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
-import { TalksService } from '../talks.service';
 import { ITalk } from '../../models';
-import { SpeakersService } from '../speakers.service';
+import { SpeakersService, TalksService } from '@services';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ActivatedRoute } from '@angular/router';
 import { AdminSpeakerDialogComponent } from '../admin-speaker-dialog/admin-speaker-dialog.component';

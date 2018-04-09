@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import 'rxjs/add/operator/toPromise';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/switchMap';
-import { environment } from '../environments/environment';
+import { environment } from '@environments/environment';
 
 @Injectable()
 export class EventService {

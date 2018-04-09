@@ -8,7 +8,7 @@ import { AdminTeamComponent } from './admin-team/admin-team.component';
 import { AdminEventsComponent } from './admin-events/admin-events.component';
 import { AdminTalkComponent } from './admin-talk/admin-talk.component';
 import { EventComponent } from './shared/event/event.component';
-import { AuthGuard } from './auth.guard';
+import { AuthGuard } from '@guards';
 import { LoginComponent } from './login/login.component';
 
 const appRoutes: Routes = [

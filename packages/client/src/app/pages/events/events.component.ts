@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { TalksService } from '../../talks.service';
-import { EventService } from '../../event.service';
+import { TalksService, EventService } from '@services';
+
 
 @Component({
   selector: 'gsic-events',

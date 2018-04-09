@@ -26,16 +26,14 @@ import { AdminComponent } from './admin/admin.component';
 import { AdminInfoComponent } from './admin-info/admin-info.component';
 import { AdminTeamComponent } from './admin-team/admin-team.component';
 import { AdminEventsComponent } from './admin-events/admin-events.component';
-import { InfoService } from './info.service';
+import { AuthService, TeamService, SpeakersService, TalksService, InfoService, EventService } from '@services';
 import { HttpClientModule } from '@angular/common/http';
-import { EventService } from './event.service';
-import { TeamService } from './team.service';
+
 import { NgPipesModule } from 'angular-pipes';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AdminTeamFormComponent } from './admin-team-form/admin-team-form.component';
 import { AdminTalkComponent } from './admin-talk/admin-talk.component';
-import { TalksService } from './talks.service';
-import { SpeakersService } from './speakers.service';
+
 import { AdminTalkFormComponent } from './admin-talk-form/admin-talk-form.component';
 import { AdminSpeakerFormComponent } from './admin-speaker-form/admin-speaker-form.component';
 
@@ -44,9 +42,9 @@ import { AdminEventDialogComponent } from './admin-event-dialog/admin-event-dial
 import { AdminTalkDialogComponent } from './admin-talk-dialog/admin-talk-dialog.component';
 import { SocialComponent } from './social/social.component';
 import { LoginComponent } from './login/login.component';
-import { AuthService } from './auth.service';
-import { AuthGuard } from './auth.guard';
-import { HeaderInterceptor } from './header.interceptor';
+
+import { AuthGuard } from '@guards';
+import { HeaderInterceptor } from '@interceptors';
 import { VenueComponent } from './pages/venue/venue.component';
 
 @Injectable()

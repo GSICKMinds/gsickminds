@@ -14,6 +14,21 @@
     "lib": [
       "es2017",
       "dom"
-    ]
+    ],
+    "baseUrl": ".",
+    "paths": {
+      "@services": [
+        "src/app/common/services"
+      ],
+      "@guards": [
+        "src/app/common/guards"
+      ],
+      "@interceptors": [
+        "src/app/common/interceptors"
+      ],
+      "@environments/*": [
+        "src/environments/*"
+      ]
+    }
   }
 }
