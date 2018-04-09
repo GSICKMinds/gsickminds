@@ -5,35 +5,33 @@ import { NgModule, Injectable, LOCALE_ID } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { FooterComponent } from './layout/footer/footer.component';
-import { HomeComponent } from './home/home.component';
+
 import { EventComponent } from './shared/event/event.component';
-
-
 import { NavComponent } from './layout/nav/nav.component';
-
-
-import { HeaderComponent } from './pages/header/header.component';
 import { AppRoutingModule } from './app.routing';
-
 import { SectionComponent } from './shared/section/section.component';
-import { AuthService, TeamService, SpeakersService, TalksService, InfoService, EventService } from '@services';
+
 import { HttpClientModule } from '@angular/common/http';
 import { NgPipesModule } from 'angular-pipes';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
 import { LoginComponent } from './login/login.component';
 import { AuthGuard } from '@guards';
-
 import { HeaderInterceptor } from '@interceptors';
-
 import { AdminModule } from './admin/admin.module';
 import { SharedModule } from './shared/shared.module';
-
 import { EventPageComponent } from './pages/event-page/event-page.component';
 import { MemberPageComponent } from './pages/member-page/member-page.component';
 import { AboutPageComponent } from './pages/about-page/about-page.component';
 import { ContactPageComponent } from './pages/contact-page/contact-page.component';
 import { ContributionPageComponent } from './pages/contribution-page/contribution-page.component';
+import { ImagePageComponent } from './pages/image-page/image-page.component';
+import { MainPageComponent } from './pages/main-page/main-page.component';
+import { InfoService } from '@services/info.service';
+import { AuthService } from '@services/auth.service';
+import { TeamService } from '@services/team.service';
+import { SpeakersService } from '@services/speakers.service';
+import { TalksService } from '@services/talks.service';
+import { EventService } from '@services/event.service';
 
 @Injectable()
 export class NgbDateNativeAdapter extends NgbDateAdapter<Date> {
@@ -52,11 +50,8 @@ export class NgbDateNativeAdapter extends NgbDateAdapter<Date> {
   declarations: [
     AppComponent,
     FooterComponent,
-    HomeComponent,
     EventComponent,
-
     NavComponent,
-    HeaderComponent,
     SectionComponent,
     LoginComponent,
     EventPageComponent,
@@ -64,6 +59,8 @@ export class NgbDateNativeAdapter extends NgbDateAdapter<Date> {
     AboutPageComponent,
     ContactPageComponent,
     ContributionPageComponent,
+    ImagePageComponent,
+    MainPageComponent,
 
   ],
   imports: [
@@ -74,11 +71,11 @@ export class NgbDateNativeAdapter extends NgbDateAdapter<Date> {
   ],
   providers: [
     InfoService,
-    EventService,
     TeamService,
     AuthService,
-    TalksService,
     SpeakersService,
+    TalksService,
+    EventService,
     AuthGuard,
     { provide: NgbDateAdapter, useClass: NgbDateNativeAdapter },
     { provide: HTTP_INTERCEPTORS, useClass: HeaderInterceptor, multi: true }

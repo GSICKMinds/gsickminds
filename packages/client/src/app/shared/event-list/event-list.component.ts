@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { EventService } from '@services';
+import { EventService } from '@services/event.service';
 
 @Component({
   selector: 'gsic-event-list',

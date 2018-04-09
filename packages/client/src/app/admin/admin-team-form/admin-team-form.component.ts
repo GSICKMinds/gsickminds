@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { IMember } from '@models';
 import { FormBuilder } from '@angular/forms';
-import { TeamService } from '@services';
+import { TeamService } from '@services/team.service';
 
 @Component({
   selector: 'gsic-admin-team-form',

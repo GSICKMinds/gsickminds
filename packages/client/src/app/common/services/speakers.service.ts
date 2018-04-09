@@ -10,7 +10,9 @@ export class SpeakersService {
   constructor(private http: HttpClient) { }
 
   getAll(eventId, talkId) {
-    return this.http.get(`${environment.apiUrl}${this.collectionUrl}/${eventId}/talks/${talkId}/speakers`).toPromise();
+    return this.http.get<any[]>(`${environment.apiUrl}${this.collectionUrl}/${eventId}/talks/${talkId}/speakers`)
+      .map(speakers => speakers.map(this.generateSocial))
+      .toPromise();
   }
 
   update(eventId, talkId, speakerId, speaker) {
@@ -19,5 +21,16 @@ export class SpeakersService {
 
   create(eventId, talkId, speaker) {
     return this.http.post(`${environment.apiUrl}${this.collectionUrl}/${eventId}/talks/${talkId}/speakers`, speaker).toPromise();
+  }
+
+  private generateSocial(member) {
+    return {
+      ...member,
+      social: {
+        linkedin: member.linkedin,
+        twitter: member.twitter,
+        github: member.github
+      }
+    }
   }
 }

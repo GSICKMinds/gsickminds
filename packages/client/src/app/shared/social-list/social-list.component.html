@@ -1,3 +1,3 @@
-<p>
-  social-list works!
-</p>
+<ng-template ngFor let-social [ngForOf]="socialObject | keys ">
+  <gsic-social-item [icon]="social" [url]="socialObject[social]" *ngIf="socialObject[social] !== ''"></gsic-social-item>
+</ng-template>

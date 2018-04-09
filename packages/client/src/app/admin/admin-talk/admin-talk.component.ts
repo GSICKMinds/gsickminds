@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewContainerRef } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { TalksService } from '@services';
+import { TalksService } from '@services/talks.service';
 import { ITalk } from '@models';
 import { ModalDialogService } from 'ngx-modal-dialog';
 import { AdminTalkDialogComponent } from '../admin-talk-dialog/admin-talk-dialog.component';

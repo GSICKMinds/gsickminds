@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { EventService } from '@services';
+import { EventService } from '@services/event.service';
 
 @Component({
   selector: 'gsic-event',

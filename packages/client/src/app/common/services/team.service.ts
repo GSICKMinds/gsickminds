@@ -16,12 +16,23 @@ export class TeamService {
         member.photo = member.photo || 'assets/images/team/avatar.png';
         return member;
       }))
+      .map(members => members.map(this.generateSocial))
       .toPromise();
   }
-
 
   save(id: string, member) {
     return this.http.put(`${environment.apiUrl}${this.collectionUrl}/${id}`, member)
       .subscribe(console.log);
+  }
+
+  private generateSocial(member) {
+    return {
+      ...member,
+      social: {
+        linkedin: member.linkedin,
+        twitter: member.twitter,
+        github: member.github
+      }
+    }
   }
 }

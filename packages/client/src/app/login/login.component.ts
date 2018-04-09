@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { IAuth } from '@models';
 import { FormBuilder } from '@angular/forms';
-import { AuthService } from '@services';
+import { AuthService } from '@services/auth.service';
 
 @Component({
   selector: 'gsic-login',

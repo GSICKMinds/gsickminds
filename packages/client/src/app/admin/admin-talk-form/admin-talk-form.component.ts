@@ -1,10 +1,12 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import { ITalk } from '@models';
-import { SpeakersService, TalksService } from '@services';
+
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ActivatedRoute } from '@angular/router';
 import { AdminSpeakerDialogComponent } from '../admin-speaker-dialog/admin-speaker-dialog.component';
+import { SpeakersService } from '@services/speakers.service';
+import { TalksService } from '@services/talks.service';
 
 @Component({
   selector: 'gsic-admin-talk-form',

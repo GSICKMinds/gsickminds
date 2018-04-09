@@ -1,5 +1,5 @@
 import { Component, OnInit, Injectable } from '@angular/core';
-import { EventService } from '@services';
+import { EventService } from '@services/event.service';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { AdminEventDialogComponent } from '../admin-event-dialog/admin-event-dialog.component';
 import { NgbDateAdapter, NgbDateStruct } from '@ng-bootstrap/ng-bootstrap';

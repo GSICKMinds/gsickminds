@@ -4,13 +4,16 @@ import 'rxjs/add/operator/toPromise';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/switchMap';
 import { environment } from '@environments/environment';
+import { TalksService } from '@services/talks.service';
+import { SpeakersService } from '@services/speakers.service';
+
 
 @Injectable()
 export class EventService {
 
   private collectionUrl = '/events';
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private talkService: TalksService, private speakerService: SpeakersService) { }
 
   getEvents() {
     return this.http.get(`${environment.apiUrl}${this.collectionUrl}`).toPromise();
@@ -21,9 +24,9 @@ export class EventService {
   }
 
   async getEvent(eventId: string) {
-    let talks = await this.http.get<any[]>(`${environment.apiUrl}${this.collectionUrl}/${eventId}/talks`).toPromise();
+    let talks = await this.talkService.getAll(eventId)
     let talksSpeakers = await Promise.all(talks.map(async talk => {
-      let speakers = await this.http.get(`${environment.apiUrl}${this.collectionUrl}/${eventId}/talks/${talk['_id']}/speakers`).toPromise();
+      let speakers = await this.speakerService.getAll(eventId, talk._id);
       return { ...talk, speakers }
     }));
 
@@ -32,9 +35,9 @@ export class EventService {
 
   async getLast() {
     let event = await this.http.get(`${environment.apiUrl}${this.collectionUrl}/last`).toPromise()
-    let talks = await this.http.get<any[]>(`${environment.apiUrl}${this.collectionUrl}/${event['_id']}/talks`).toPromise();
+    let talks = await this.talkService.getAll(event['_id'])
     let talksSpeakers = await Promise.all(talks.map(async talk => {
-      let speakers = await this.http.get(`${environment.apiUrl}${this.collectionUrl}/${event['_id']}/talks/${talk['_id']}/speakers`).toPromise();
+      let speakers = await this.speakerService.getAll(event['_id'], talk._id);
       return { ...talk, speakers }
     }));
 

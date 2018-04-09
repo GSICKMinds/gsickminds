@@ -17,8 +17,8 @@
     ],
     "baseUrl": ".",
     "paths": {
-      "@services": [
-        "src/app/common/services"
+      "@services/*": [
+        "src/app/common/services/*"
       ],
       "@guards": [
         "src/app/common/guards"

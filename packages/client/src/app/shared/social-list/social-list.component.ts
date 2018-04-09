@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'gsic-social-list',
@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./social-list.component.scss']
 })
 export class SocialListComponent implements OnInit {
-
+  @Input() socialObject;
   constructor() { }
 
   ngOnInit() {

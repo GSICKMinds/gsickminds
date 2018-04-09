@@ -11,7 +11,7 @@ export class TalksService {
   constructor(private http: HttpClient) { }
 
   getAll(eventId: string) {
-    return this.http.get(`${environment.apiUrl}${this.collectionUrl}/${eventId}/talks`).toPromise();
+    return this.http.get<any[]>(`${environment.apiUrl}${this.collectionUrl}/${eventId}/talks`).toPromise();
   }
 
   update(eventId, talkId, talk) {
