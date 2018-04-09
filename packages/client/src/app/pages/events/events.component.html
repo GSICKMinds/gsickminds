@@ -1,8 +1,8 @@
 <gsic-title [title]="title"></gsic-title>
 
-<div class="clearfix">
-  <span class="float-left">{{events?.date | date: 'fullDate'}}</span>
-  <button type="button" class="btn btn-primary float-right">Apuntate a este evento</button>
+<div class="d-md-flex justify-content-md-between">
+  <h5>{{events?.date | date: 'mediumDate'}}</h5>
+  <button type="button" class="btn btn-primary ">Apuntate a este evento</button>
 </div>
 
 <ng-template ngFor let-event [ngForOf]="events?.talks">

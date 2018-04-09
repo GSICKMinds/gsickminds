@@ -116,8 +116,7 @@ export class NgbDateNativeAdapter extends NgbDateAdapter<Date> {
     SpeakersService,
     AuthGuard,
     { provide: NgbDateAdapter, useClass: NgbDateNativeAdapter },
-    { provide: HTTP_INTERCEPTORS, useClass: HeaderInterceptor, multi: true },
-    { provide: LOCALE_ID, useValue: "es" }
+    { provide: HTTP_INTERCEPTORS, useClass: HeaderInterceptor, multi: true }
   ],
   entryComponents: [
     AdminEventDialogComponent,
