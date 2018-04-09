@@ -22,27 +22,12 @@ import { AppRoutingModule } from './app.routing';
 import { RouterModule } from '@angular/router';
 import { EventListComponent } from './pages/event-list/event-list.component';
 import { SectionComponent } from './shared/section/section.component';
-import { AdminComponent } from './admin/admin.component';
-import { AdminInfoComponent } from './admin-info/admin-info.component';
-import { AdminTeamComponent } from './admin-team/admin-team.component';
-import { AdminEventsComponent } from './admin-events/admin-events.component';
 import { AuthService, TeamService, SpeakersService, TalksService, InfoService, EventService } from '@services';
 import { HttpClientModule } from '@angular/common/http';
-
 import { NgPipesModule } from 'angular-pipes';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { AdminTeamFormComponent } from './admin-team-form/admin-team-form.component';
-import { AdminTalkComponent } from './admin-talk/admin-talk.component';
-
-import { AdminTalkFormComponent } from './admin-talk-form/admin-talk-form.component';
-import { AdminSpeakerFormComponent } from './admin-speaker-form/admin-speaker-form.component';
-
-import { AdminSpeakerDialogComponent } from './admin-speaker-dialog/admin-speaker-dialog.component';
-import { AdminEventDialogComponent } from './admin-event-dialog/admin-event-dialog.component';
-import { AdminTalkDialogComponent } from './admin-talk-dialog/admin-talk-dialog.component';
 import { SocialComponent } from './social/social.component';
 import { LoginComponent } from './login/login.component';
-
 import { AuthGuard } from '@guards';
 import { HeaderInterceptor } from '@interceptors';
 import { VenueComponent } from './pages/venue/venue.component';
@@ -80,18 +65,7 @@ export class NgbDateNativeAdapter extends NgbDateAdapter<Date> {
     HeaderComponent,
     EventListComponent,
     SectionComponent,
-    AdminComponent,
-    AdminInfoComponent,
-    AdminTeamComponent,
-    AdminEventsComponent,
-    AdminTeamFormComponent,
-    AdminTalkComponent,
-    AdminTalkFormComponent,
-    AdminSpeakerFormComponent,
 
-    AdminSpeakerDialogComponent,
-    AdminEventDialogComponent,
-    AdminTalkDialogComponent,
     SocialComponent,
     LoginComponent,
 
@@ -116,11 +90,7 @@ export class NgbDateNativeAdapter extends NgbDateAdapter<Date> {
     { provide: NgbDateAdapter, useClass: NgbDateNativeAdapter },
     { provide: HTTP_INTERCEPTORS, useClass: HeaderInterceptor, multi: true }
   ],
-  entryComponents: [
-    AdminEventDialogComponent,
-    AdminTalkDialogComponent,
-    AdminSpeakerDialogComponent
-  ],
+
   bootstrap: [AppComponent]
 })
 export class AppModule { }

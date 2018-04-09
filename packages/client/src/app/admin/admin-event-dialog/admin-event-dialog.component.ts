@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { FormBuilder } from '@angular/forms';
-import { IEvent } from '../../models';
+import { IEvent } from '@models';
 
 @Component({
   selector: 'gsic-admin-event-dialog',

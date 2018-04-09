@@ -2,7 +2,7 @@ import { Component, OnInit, ComponentRef } from '@angular/core';
 import { IModalDialog, IModalDialogOptions, IModalDialogButton } from 'ngx-modal-dialog';
 import { NgbModal, NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { FormBuilder } from '@angular/forms';
-import { ITalk } from '../../models';
+import { ITalk } from '@models';
 
 @Component({
   selector: 'gsic-admin-talk-dialog',

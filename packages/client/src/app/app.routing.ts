@@ -3,10 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './pages/home/home.component';
 import { EventListComponent } from './pages/event-list/event-list.component';
 import { AdminComponent } from './admin/admin.component';
-import { AdminInfoComponent } from './admin-info/admin-info.component';
-import { AdminTeamComponent } from './admin-team/admin-team.component';
-import { AdminEventsComponent } from './admin-events/admin-events.component';
-import { AdminTalkComponent } from './admin-talk/admin-talk.component';
+
 import { EventComponent } from './shared/event/event.component';
 import { AuthGuard } from '@guards';
 import { LoginComponent } from './login/login.component';
@@ -14,15 +11,6 @@ import { LoginComponent } from './login/login.component';
 const appRoutes: Routes = [
     { path: '', component: HomeComponent, pathMatch: 'full' },
     { path: 'login', component: LoginComponent, },
-    {
-        path: 'admin', component: AdminComponent, canActivate: [AuthGuard], children: [
-            { path: 'info', component: AdminInfoComponent, outlet: 'admin' },
-            { path: 'events', component: AdminEventsComponent, outlet: 'admin' },
-            { path: 'events/:id', component: AdminTalkComponent, outlet: 'admin' },
-            { path: 'team', component: AdminTeamComponent, outlet: 'admin' },
-        ]
-    },
-
     {
         path: 'events', component: EventListComponent, children: [
             { path: ':id', component: EventComponent }

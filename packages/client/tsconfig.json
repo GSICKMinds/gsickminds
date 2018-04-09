@@ -28,6 +28,9 @@
       ],
       "@environments/*": [
         "src/environments/*"
+      ],
+      "@models": [
+        "src/app/common/models"
       ]
     }
   }
