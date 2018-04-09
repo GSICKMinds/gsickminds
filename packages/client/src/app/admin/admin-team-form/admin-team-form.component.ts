@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { IMember } from '@models';
+import { IMember } from '@models/models';
 import { FormBuilder } from '@angular/forms';
 import { TeamService } from '@services/team.service';
 

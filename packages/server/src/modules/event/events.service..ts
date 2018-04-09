@@ -17,6 +17,10 @@ export class EventsService {
     return await this.talkModel.find();
   }
 
+  async getById(eventId) {
+    return await this.talkModel.findById(eventId);
+  }
+
   async retrieveLast() {
     return await this.talkModel.findOne().sort('-date');
   }

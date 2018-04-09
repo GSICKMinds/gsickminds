@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
-import { ISpeaker } from '@models';
+import { ISpeaker } from '@models/models';
 import { ActivatedRoute } from '@angular/router';
 import { SpeakersService } from '@services/speakers.service';
 

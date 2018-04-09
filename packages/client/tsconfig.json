@@ -20,17 +20,17 @@
       "@services/*": [
         "src/app/common/services/*"
       ],
-      "@guards": [
-        "src/app/common/guards"
+      "@guards/*": [
+        "src/app/common/guards/*"
       ],
-      "@interceptors": [
-        "src/app/common/interceptors"
+      "@interceptors/*": [
+        "src/app/common/interceptors/*"
       ],
       "@environments/*": [
         "src/environments/*"
       ],
-      "@models": [
-        "src/app/common/models"
+      "@models/*": [
+        "src/app/common/models/*"
       ]
     }
   }

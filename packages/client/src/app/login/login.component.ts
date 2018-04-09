@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { IAuth } from '@models';
+import { IAuth } from '@models/models';
 import { FormBuilder } from '@angular/forms';
 import { AuthService } from '@services/auth.service';
 

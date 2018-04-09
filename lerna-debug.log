@@ -19,8 +19,28 @@
 14 error execute callback with error
 15 error Error: Command failed: npm run build
 15 error [0m[0m
-15 error [0m[1m[31mERROR in : Cannot determine the module for class VenueComponent in D:/repository/gsickminds/packages/client/src/app/venue/venue.component.ts! Add VenueComponent to the NgModule to fix it.[39m[22m[0m
-15 error [0m[1m[31msrc/app/pages/about/about.component.ts(20,1): error TS1128: Declaration or statement expected.[39m[22m[0m
+15 error [0m[1m[31mERROR in : Can't bind to 'routerLink' since it isn't a known property of 'a'. ("[39m[22m[0m
+15 error [0m[1m[31m  <div class="nav col-2">[39m[22m[0m
+15 error [0m[1m[31m    <div>[39m[22m[0m
+15 error [0m[1m[31m      <a class="nav-link " [ERROR ->][routerLink]="['/admin', { outlets: { admin: [ 'events'] } }] ">Eventos</a>[39m[22m[0m
+15 error [0m[1m[31m      <a class="nav-link ")[39m[22m[0m
+15 error [0m[1m[31m: Can't bind to 'routerLink' since it isn't a known property of 'a'. ("uterLink]="['/admin', { outlets: { admin: [ 'events'] } }] ">Eventos</a>[39m[22m[0m
+15 error [0m[1m[31m      <a class="nav-link " [ERROR ->][routerLink]="['/admin', { outlets: { admin: [ 'team'] } }] ">Miembros</a>[39m[22m[0m
+15 error [0m[1m[31m      <a class="nav-link "")[39m[22m[0m
+15 error [0m[1m[31m: Can't bind to 'routerLink' since it isn't a known property of 'a'. ("outerLink]="['/admin', { outlets: { admin: [ 'team'] } }] ">Miembros</a>[39m[22m[0m
+15 error [0m[1m[31m      <a class="nav-link " [ERROR ->][routerLink]="['/admin', { outlets: { admin: [ 'info'] } }] ">Información</a>[39m[22m[0m
+15 error [0m[1m[31m    </div>[39m[22m[0m
+15 error [0m[1m[31m  </div>[39m[22m[0m
+15 error [0m[1m[31m")[39m[22m[0m
+15 error [0m[1m[31m: 'router-outlet' is not a known element:[39m[22m[0m
+15 error [0m[1m[31m1. If 'router-outlet' is an Angular component, then verify that it is part of this module.[39m[22m[0m
+15 error [0m[1m[31m2. If 'router-outlet' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas' of this component to suppress this message. ("[39m[22m[0m
+15 error [0m[1m[31m  <div class="col-9">[39m[22m[0m
+15 error [0m[1m[31m[39m[22m[0m
+15 error [0m[1m[31m    [ERROR ->]<router-outlet name="admin"></router-outlet>[39m[22m[0m
+15 error [0m[1m[31m[39m[22m[0m
+15 error [0m[1m[31m  </div>[39m[22m[0m
+15 error [0m[1m[31m")[39m[22m[0m
 15 error [0m[1m[31m[39m[22m[0m
 15 error npm ERR! code ELIFECYCLE
 15 error npm ERR! errno 1
@@ -31,7 +51,7 @@
 15 error npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
 15 error
 15 error npm ERR! A complete log of this run can be found in:
-15 error npm ERR!     C:\Users\silve\AppData\Roaming\npm-cache\_logs\2018-04-02T15_55_20_285Z-debug.log
+15 error npm ERR!     C:\Users\silve\AppData\Roaming\npm-cache\_logs\2018-04-09T19_38_15_555Z-debug.log
 15 error
 15 error > gsickminds-client-angular@0.0.0 build D:\repository\gsickminds\packages\client
 15 error > ng build --prod
@@ -46,9 +66,9 @@
 15 error
 15 error To disable this warning run "ng set warnings.typescriptMismatch=false".
 15 error
-15 error [0mDate: [1m[37m2018-04-02T15:55:20.234Z[39m[22m[0m
-15 error [0mHash: [1m[37m8211d2ca5d4dbc07fdac[39m[22m[0m
-15 error [0mTime: [1m[37m6242[39m[22mms[0m
+15 error [0mDate: [1m[37m2018-04-09T19:38:15.488Z[39m[22m[0m
+15 error [0mHash: [1m[37m36ecbd250f6fc5f67864[39m[22m[0m
+15 error [0mTime: [1m[37m8166[39m[22mms[0m
 15 error [0mchunk {[1m[33m0[39m[22m} [1m[32mstyles.9371660da200bf67e93d.bundle.css[39m[22m (styles) 179 kB [1m[33m[initial][39m[22m[1m[32m [rendered][39m[22m[0m
 15 error [0mchunk {[1m[33m1[39m[22m} [1m[32mpolyfills.997d8cc03812de50ae67.bundle.js[39m[22m (polyfills) 84 bytes [1m[33m[initial][39m[22m[1m[32m [rendered][39m[22m[0m
 15 error [0mchunk {[1m[33m2[39m[22m} [1m[32mmain.ee32620ecd1edff94184.bundle.js[39m[22m (main) 84 bytes [1m[33m[initial][39m[22m[1m[32m [rendered][39m[22m[0m

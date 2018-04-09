@@ -7,16 +7,7 @@ import { EventService } from '@services/event.service';
   templateUrl: './talk-list.component.html',
   styleUrls: ['./talk-list.component.scss']
 })
-export class TalkListComponent implements OnInit {
+export class TalkListComponent {
   @Input() talks;
-
-  constructor(private route: ActivatedRoute, private eventService: EventService) { }
-
-  async ngOnInit() {
-    const eventId = this.route.snapshot.paramMap.get('id');
-    this.talks = await this.eventService.getEvent(eventId);
-
-
-  }
 
 }

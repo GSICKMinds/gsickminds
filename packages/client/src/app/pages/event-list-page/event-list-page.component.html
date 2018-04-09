@@ -1,0 +1,7 @@
+<gsic-section-content title="Eventos Anteriores">
+  <div class="list-group" *ngFor="let event of events" class="m-3">
+    <button type="button" class="list-group-item list-group-item-action" [routerLink]="[event._id]">
+      Evento {{event.date | date: 'mediumDate'}}
+    </button>
+  </div>
+</gsic-section-content>

@@ -11,8 +11,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { NgPipesModule } from 'angular-pipes';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LoginComponent } from './login/login.component';
-import { AuthGuard } from '@guards';
-import { HeaderInterceptor } from '@interceptors';
+import { AuthGuard } from '@guards/auth.guard';
+import { HeaderInterceptor } from '@interceptors/header.interceptor';
 import { AdminModule } from './admin/admin.module';
 import { SharedModule } from './shared/shared.module';
 import { EventPageComponent } from './pages/event-page/event-page.component';
@@ -28,6 +28,8 @@ import { TeamService } from '@services/team.service';
 import { SpeakersService } from '@services/speakers.service';
 import { TalksService } from '@services/talks.service';
 import { EventService } from '@services/event.service';
+import { EventListPageComponent } from './pages/event-list-page/event-list-page.component';
+import { TalkListPageComponent } from './pages/talk-list-page/talk-list-page.component';
 
 @Injectable()
 export class NgbDateNativeAdapter extends NgbDateAdapter<Date> {
@@ -55,6 +57,8 @@ export class NgbDateNativeAdapter extends NgbDateAdapter<Date> {
     ContributionPageComponent,
     ImagePageComponent,
     MainPageComponent,
+    EventListPageComponent,
+    TalkListPageComponent,
 
   ],
   imports: [

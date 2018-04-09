@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { InfoService } from '@services/info.service';
-import { IInfo } from '@models';
+import { IInfo } from '@models/models';
 import { FormBuilder } from '@angular/forms';
 
 @Component({

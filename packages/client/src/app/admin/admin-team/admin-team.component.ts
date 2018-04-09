@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { TeamService } from '@services/team.service';
-import { IMember } from '@models';
+import { IMember } from '@models/models';
 
 @Component({
   selector: 'gsic-admin-team',

@@ -1,16 +1,16 @@
 import { NgModule, Component } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { AuthGuard } from '@guards';
+import { AuthGuard } from '@guards/auth.guard';
 import { LoginComponent } from './login/login.component';
-import { TalkListComponent } from './shared/talk-list/talk-list.component';
-import { EventListComponent } from './shared/event-list/event-list.component';
 import { MainPageComponent } from './pages/main-page/main-page.component';
+import { EventListPageComponent } from './pages/event-list-page/event-list-page.component';
+import { TalkListPageComponent } from './pages/talk-list-page/talk-list-page.component';
 
 const appRoutes: Routes = [
     { path: '', component: MainPageComponent },
     { path: 'login', component: LoginComponent, },
-    { path: 'events', component: EventListComponent },
-    { path: 'events/:id', component: TalkListComponent },
+    { path: 'events', component: EventListPageComponent },
+    { path: 'events/:id', component: TalkListPageComponent },
     { path: '**', redirectTo: '', pathMatch: 'full' }
 ];
 

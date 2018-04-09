@@ -9,7 +9,6 @@ import { TalkListComponent } from './talk-list/talk-list.component';
 import { TalkItemComponent } from './talk-item/talk-item.component';
 import { SpeakerItemComponent } from './speaker-item/speaker-item.component';
 import { SpeakerListComponent } from './speaker-list/speaker-list.component';
-import { EventListComponent } from './event-list/event-list.component';
 import { RouterModule } from '@angular/router';
 
 import { SocialListComponent } from './social-list/social-list.component';
@@ -38,7 +37,6 @@ import { SectionContentComponent } from './section-content/section-content.compo
     TalkItemComponent,
     SpeakerItemComponent,
     SpeakerListComponent,
-    EventListComponent,
     SocialListComponent,
     SectionTitleComponent,
     SocialItemComponent,
@@ -51,7 +49,6 @@ import { SectionContentComponent } from './section-content/section-content.compo
     TalkItemComponent,
     SpeakerItemComponent,
     SpeakerListComponent,
-    EventListComponent,
     SocialListComponent,
     SocialItemComponent,
     SectionTitleComponent,
