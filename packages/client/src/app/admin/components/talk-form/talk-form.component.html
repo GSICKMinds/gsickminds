@@ -1,0 +1,15 @@
+<form [formGroup]="talkForm">
+  <div *ngFor="let field of talk | keys" class="form-group row">
+    <label class="col-sm-2 col-form-label">{{field}}</label>
+    <div class="col-sm-10">
+      <input class="form-control" [formControlName]="field">
+    </div>
+  </div>
+</form>
+
+
+<button class="btn btn-primary">Nuevo Ponente</button>
+
+<div *ngFor="let speaker of speakers " class="border border-primary p-4 my-2">
+  <gsic-speaker-form [speaker]="speaker"></gsic-speaker-form>
+</div>

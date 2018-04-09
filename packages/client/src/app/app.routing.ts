@@ -7,11 +7,19 @@ import { EventListPageComponent } from './pages/event-list-page/event-list-page.
 import { TalkListPageComponent } from './pages/talk-list-page/talk-list-page.component';
 
 const appRoutes: Routes = [
-    { path: '', component: MainPageComponent },
+
     { path: 'login', component: LoginComponent, },
-    { path: 'events', component: EventListPageComponent },
-    { path: 'events/:id', component: TalkListPageComponent },
-    { path: '**', redirectTo: '', pathMatch: 'full' }
+    {
+        path: 'events', children: [
+            { path: '', component: EventListPageComponent },
+            { path: ':id', component: TalkListPageComponent },
+        ]
+    },
+
+    { path: 'admin', loadChildren: 'app/admin/admin.module#AdminModule' },
+    { path: '', component: MainPageComponent, pathMatch: 'full' },
+    { path: '**', redirectTo: '' }
+
 ];
 
 

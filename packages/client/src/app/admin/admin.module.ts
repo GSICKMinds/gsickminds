@@ -1,46 +1,27 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { AdminComponent } from './admin/admin.component';
-import { AdminInfoComponent } from './admin-info/admin-info.component';
-import { AdminTeamComponent } from './admin-team/admin-team.component';
-import { AdminEventsComponent } from './admin-events/admin-events.component';
-import { AdminTeamFormComponent } from './admin-team-form/admin-team-form.component';
-import { AdminTalkComponent } from './admin-talk/admin-talk.component';
-import { AdminTalkFormComponent } from './admin-talk-form/admin-talk-form.component';
-import { AdminSpeakerFormComponent } from './admin-speaker-form/admin-speaker-form.component';
-import { AdminSpeakerDialogComponent } from './admin-speaker-dialog/admin-speaker-dialog.component';
-import { AdminEventDialogComponent } from './admin-event-dialog/admin-event-dialog.component';
-import { AdminTalkDialogComponent } from './admin-talk-dialog/admin-talk-dialog.component';
+
 import { AdminRoutingModule } from './admin-routing.module';
-import { RouterModule } from '@angular/router';
-import { HttpClientModule } from '@angular/common/http';
-import { ReactiveFormsModule } from '@angular/forms';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { NgPipesModule } from 'angular-pipes';
+import { AdminPageComponent } from './pages/admin-page/admin-page.component';
+import { EventsPageComponent } from './pages/events-page/events-page.component';
+import { MembersPageComponent } from './pages/members-page/members-page.component';
+import { InfoPageComponent } from './pages/info-page/info-page.component';
+import { SidenavComponent } from './layout/sidenav/sidenav.component';
 import { SharedModule } from '../shared/shared.module';
+import { TalksPageComponent } from './pages/talks-page/talks-page.component';
+import { TalkFormComponent } from './components/talk-form/talk-form.component';
+import { SpeakerFormComponent } from './components/speaker-form/speaker-form.component';
+import { EventFormComponent } from './components/event-form/event-form.component';
+import { MemberFormComponent } from './components/member-form/member-form.component';
+import { InfoFormComponent } from './components/info-form/info-form.component';
+
 
 @NgModule({
   imports: [
     CommonModule,
-    SharedModule
+    SharedModule,
+    AdminRoutingModule
   ],
-  declarations: [
-    AdminComponent,
-    AdminInfoComponent,
-    AdminTeamComponent,
-    AdminEventsComponent,
-    AdminTeamFormComponent,
-    AdminTalkComponent,
-    AdminTalkFormComponent,
-    AdminSpeakerFormComponent,
-    AdminSpeakerDialogComponent,
-    AdminEventDialogComponent,
-    AdminTalkDialogComponent,
-  ],
-  entryComponents: [
-    AdminEventDialogComponent,
-    AdminTalkDialogComponent,
-    AdminSpeakerDialogComponent
-  ],
+  declarations: [AdminPageComponent, EventsPageComponent, MembersPageComponent, InfoPageComponent, SidenavComponent, TalksPageComponent, TalkFormComponent, SpeakerFormComponent, EventFormComponent, MemberFormComponent, InfoFormComponent]
 })
 export class AdminModule { }

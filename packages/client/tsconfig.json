@@ -15,22 +15,19 @@
       "es2017",
       "dom"
     ],
-    "baseUrl": ".",
+    "baseUrl": "src",
     "paths": {
       "@services/*": [
-        "src/app/common/services/*"
+        "app/common/services/*"
       ],
       "@guards/*": [
-        "src/app/common/guards/*"
+        "app/common/guards/*"
       ],
       "@interceptors/*": [
-        "src/app/common/interceptors/*"
-      ],
-      "@environments/*": [
-        "src/environments/*"
+        "app/common/interceptors/*"
       ],
       "@models/*": [
-        "src/app/common/models/*"
+        "app/common/models/*"
       ]
     }
   }

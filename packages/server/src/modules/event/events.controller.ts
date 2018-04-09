@@ -17,14 +17,14 @@ export class EventsController {
     return await this.eventsService.retreiveAll();
   }
 
-  @Get(':id')
-  async getById(@Param('id') eventId: string) {
-    return await this.eventsService.getById(eventId);
-  }
-
   @Get('last')
   async retrieveLast() {
     return await this.eventsService.retrieveLast();
+  }
+
+  @Get(':id')
+  async getById(@Param('id') eventId: string) {
+    return await this.eventsService.getById(eventId);
   }
 
   @Put(':id')

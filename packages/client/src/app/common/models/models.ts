@@ -4,6 +4,7 @@ export interface IEvent {
 }
 
 export interface ITalk {
+    _id: string;
     title: string;
     duration: string;
     description: string;
@@ -12,6 +13,7 @@ export interface ITalk {
 }
 
 export interface ISpeaker extends ISocial {
+    _id: string;
     name: string;
     position: string;
     photo: string;

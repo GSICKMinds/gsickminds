@@ -1,11 +1,11 @@
-import { Injectable } from '@angular/core';
+import { Injectable, Inject } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/observable/of';
 import 'rxjs/add/operator/do';
 import 'rxjs/add/operator/delay';
 import 'rxjs/add/operator/toPromise';
 import { HttpClient } from '@angular/common/http';
-import { environment } from '@environments/environment';
+
 
 @Injectable()
 export class AuthService {
@@ -13,9 +13,10 @@ export class AuthService {
   private collectionUrl = 'auth/token'
   // store the URL so we can redirect after logging in
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, @Inject('apiUrl') private apiUrl: string) { }
+
   login(auth) {
-    this.http.post(`${environment.apiUrl}/${this.collectionUrl}`, auth)
+    this.http.post(`${this.apiUrl}/${this.collectionUrl}`, auth)
       .map(auth => localStorage.setItem('token', auth['access_token']))
       .subscribe()
   }

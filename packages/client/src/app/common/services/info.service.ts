@@ -1,21 +1,20 @@
-import { Injectable } from '@angular/core';
+import { Injectable, Inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import 'rxjs/add/operator/toPromise';
-import { environment } from '@environments/environment';
 
 @Injectable()
 export class InfoService {
 
   private collectionUrl = '/info';
 
-  constructor(private http: HttpClient) { }
+  constructor(@Inject('apiUrl') private apiUrl: string, private http: HttpClient) { }
 
   getInfo() {
-    return this.http.get(`${environment.apiUrl}${this.collectionUrl}`).toPromise();
+    return this.http.get(`${this.apiUrl}${this.collectionUrl}`).toPromise();
   }
 
   save(infoId, info) {
-    this.http.put(`${environment.apiUrl}${this.collectionUrl}/${infoId}`, info)
+    this.http.put(`${this.apiUrl}${this.collectionUrl}/${infoId}`, info)
       .subscribe(console.log);
   }
 

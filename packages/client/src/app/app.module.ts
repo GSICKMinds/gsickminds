@@ -30,6 +30,7 @@ import { TalksService } from '@services/talks.service';
 import { EventService } from '@services/event.service';
 import { EventListPageComponent } from './pages/event-list-page/event-list-page.component';
 import { TalkListPageComponent } from './pages/talk-list-page/talk-list-page.component';
+import { environment } from 'environments/environment';
 
 @Injectable()
 export class NgbDateNativeAdapter extends NgbDateAdapter<Date> {
@@ -76,7 +77,8 @@ export class NgbDateNativeAdapter extends NgbDateAdapter<Date> {
     EventService,
     AuthGuard,
     { provide: NgbDateAdapter, useClass: NgbDateNativeAdapter },
-    { provide: HTTP_INTERCEPTORS, useClass: HeaderInterceptor, multi: true }
+    { provide: HTTP_INTERCEPTORS, useClass: HeaderInterceptor, multi: true },
+    { provide: 'apiUrl', useValue: environment.apiUrl }
   ],
 
   bootstrap: [AppComponent]
