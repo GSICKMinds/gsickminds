@@ -15,6 +15,7 @@ import { RouterModule } from '@angular/router';
 import { SocialListComponent } from './social-list/social-list.component';
 import { SocialItemComponent } from './social-item/social-item.component';
 import { SectionTitleComponent } from './section-title/section-title.component';
+import { SectionContentComponent } from './section-content/section-content.component';
 
 
 @NgModule({
@@ -40,7 +41,8 @@ import { SectionTitleComponent } from './section-title/section-title.component';
     EventListComponent,
     SocialListComponent,
     SectionTitleComponent,
-    SocialItemComponent
+    SocialItemComponent,
+    SectionContentComponent
   ],
   declarations: [
     MemberListComponent,
@@ -53,7 +55,7 @@ import { SectionTitleComponent } from './section-title/section-title.component';
     SocialListComponent,
     SocialItemComponent,
     SectionTitleComponent,
-
+    SectionContentComponent,
   ]
 })
 export class SharedModule { }

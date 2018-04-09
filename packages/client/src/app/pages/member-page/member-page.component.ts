@@ -8,7 +8,6 @@ import { TeamService } from '@services/team.service';
 })
 export class MemberPageComponent implements OnInit {
 
-  title = 'Nuestro Equipo';
   members;
 
   constructor(private teamService: TeamService) { }

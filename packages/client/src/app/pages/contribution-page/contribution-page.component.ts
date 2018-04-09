@@ -6,7 +6,6 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./contribution-page.component.scss']
 })
 export class ContributionPageComponent implements OnInit {
-  title = 'Colabora con nosotros';
 
   constructor() { }
 

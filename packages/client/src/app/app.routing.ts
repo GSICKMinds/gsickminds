@@ -1,6 +1,5 @@
 import { NgModule, Component } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { EventComponent } from './shared/event/event.component';
 import { AuthGuard } from '@guards';
 import { LoginComponent } from './login/login.component';
 import { TalkListComponent } from './shared/talk-list/talk-list.component';

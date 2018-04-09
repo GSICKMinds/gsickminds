@@ -7,7 +7,7 @@ import { InfoService } from '@services/info.service';
   styleUrls: ['./about-page.component.scss']
 })
 export class AboutPageComponent implements OnInit {
-  title = 'Sobre Nosotros';
+
   info;
 
   constructor(private infoService: InfoService) { }

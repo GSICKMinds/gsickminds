@@ -5,12 +5,8 @@ import { NgModule, Injectable, LOCALE_ID } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { FooterComponent } from './layout/footer/footer.component';
-
-import { EventComponent } from './shared/event/event.component';
 import { NavComponent } from './layout/nav/nav.component';
 import { AppRoutingModule } from './app.routing';
-import { SectionComponent } from './shared/section/section.component';
-
 import { HttpClientModule } from '@angular/common/http';
 import { NgPipesModule } from 'angular-pipes';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -50,9 +46,7 @@ export class NgbDateNativeAdapter extends NgbDateAdapter<Date> {
   declarations: [
     AppComponent,
     FooterComponent,
-    EventComponent,
     NavComponent,
-    SectionComponent,
     LoginComponent,
     EventPageComponent,
     MemberPageComponent,
