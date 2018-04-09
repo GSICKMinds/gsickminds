@@ -20,6 +20,16 @@ export class EventService {
     return this.http.post(`${environment.apiUrl}${this.collectionUrl}`, event).toPromise();
   }
 
+  async getEvent(eventId: string) {
+    let talks = await this.http.get<any[]>(`${environment.apiUrl}${this.collectionUrl}/${eventId}/talks`).toPromise();
+    let talksSpeakers = await Promise.all(talks.map(async talk => {
+      let speakers = await this.http.get(`${environment.apiUrl}${this.collectionUrl}/${eventId}/talks/${talk['_id']}/speakers`).toPromise();
+      return { ...talk, speakers }
+    }));
+
+    return talksSpeakers;
+  }
+
   async getLast() {
     let event = await this.http.get(`${environment.apiUrl}${this.collectionUrl}/last`).toPromise()
     let talks = await this.http.get<any[]>(`${environment.apiUrl}${this.collectionUrl}/${event['_id']}/talks`).toPromise();

@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { AdminComponent } from './admin.component';
+import { AdminComponent } from './admin/admin.component';
 import { AdminInfoComponent } from './admin-info/admin-info.component';
 import { AdminTeamComponent } from './admin-team/admin-team.component';
 import { AdminEventsComponent } from './admin-events/admin-events.component';
@@ -11,10 +11,18 @@ import { AdminSpeakerFormComponent } from './admin-speaker-form/admin-speaker-fo
 import { AdminSpeakerDialogComponent } from './admin-speaker-dialog/admin-speaker-dialog.component';
 import { AdminEventDialogComponent } from './admin-event-dialog/admin-event-dialog.component';
 import { AdminTalkDialogComponent } from './admin-talk-dialog/admin-talk-dialog.component';
+import { AdminRoutingModule } from './admin-routing.module';
+import { RouterModule } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
+import { ReactiveFormsModule } from '@angular/forms';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgPipesModule } from 'angular-pipes';
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
   imports: [
-    CommonModule
+    CommonModule,
+    SharedModule
   ],
   declarations: [
     AdminComponent,

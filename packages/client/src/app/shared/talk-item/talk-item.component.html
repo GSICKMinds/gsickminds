@@ -1,0 +1,10 @@
+<div class="card border-primary rounded">
+  <div class="card-body border-bottom border-primary">
+    <h5 class="card-title">{{talk.title}}</h5>
+    <h6 class="card-subtitle mb-2 text-muted">{{talk.duration}}</h6>
+    <p class="card-text">{{talk.description}}</p>
+  </div>
+
+  <gsic-speaker-list [speakers]="talk.speakers"></gsic-speaker-list>
+
+</div>

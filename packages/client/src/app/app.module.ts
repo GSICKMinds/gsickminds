@@ -2,35 +2,38 @@ import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { NgbModule, NgbDateAdapter, NgbDateStruct } from '@ng-bootstrap/ng-bootstrap';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, Injectable, LOCALE_ID } from '@angular/core';
+import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { FooterComponent } from './layout/footer/footer.component';
-import { HomeComponent } from './pages/home/home.component';
-
+import { HomeComponent } from './home/home.component';
 import { EventComponent } from './shared/event/event.component';
-import { AboutComponent } from './pages/about/about.component';
-import { TeamComponent } from './pages/team/team.component';
-import { ContactComponent } from './pages/contact/contact.component';
-import { MemberComponent } from './shared/member/member.component';
+
+
 import { NavComponent } from './layout/nav/nav.component';
-import { SponsorComponent } from './shared/sponsor/sponsor.component';
-import { SponsorsComponent } from './pages/sponsors/sponsors.component';
-import { EventsComponent } from './pages/events/events.component';
-import { ContributionComponent } from './pages/contribution/contribution.component';
-import { TitleComponent } from './shared/title/title.component';
+
+
 import { HeaderComponent } from './pages/header/header.component';
 import { AppRoutingModule } from './app.routing';
-import { RouterModule } from '@angular/router';
-import { EventListComponent } from './pages/event-list/event-list.component';
+
 import { SectionComponent } from './shared/section/section.component';
 import { AuthService, TeamService, SpeakersService, TalksService, InfoService, EventService } from '@services';
 import { HttpClientModule } from '@angular/common/http';
 import { NgPipesModule } from 'angular-pipes';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { SocialComponent } from './social/social.component';
+
 import { LoginComponent } from './login/login.component';
 import { AuthGuard } from '@guards';
+
 import { HeaderInterceptor } from '@interceptors';
-import { VenueComponent } from './pages/venue/venue.component';
+
+import { AdminModule } from './admin/admin.module';
+import { SharedModule } from './shared/shared.module';
+
+import { EventPageComponent } from './pages/event-page/event-page.component';
+import { MemberPageComponent } from './pages/member-page/member-page.component';
+import { AboutPageComponent } from './pages/about-page/about-page.component';
+import { ContactPageComponent } from './pages/contact-page/contact-page.component';
+import { ContributionPageComponent } from './pages/contribution-page/contribution-page.component';
 
 @Injectable()
 export class NgbDateNativeAdapter extends NgbDateAdapter<Date> {
@@ -50,34 +53,24 @@ export class NgbDateNativeAdapter extends NgbDateAdapter<Date> {
     AppComponent,
     FooterComponent,
     HomeComponent,
-    VenueComponent,
     EventComponent,
-    AboutComponent,
-    TeamComponent,
-    ContactComponent,
-    MemberComponent,
-    NavComponent,
-    SponsorComponent,
-    SponsorsComponent,
-    EventsComponent,
-    ContributionComponent,
-    TitleComponent,
-    HeaderComponent,
-    EventListComponent,
-    SectionComponent,
 
-    SocialComponent,
+    NavComponent,
+    HeaderComponent,
+    SectionComponent,
     LoginComponent,
+    EventPageComponent,
+    MemberPageComponent,
+    AboutPageComponent,
+    ContactPageComponent,
+    ContributionPageComponent,
 
   ],
   imports: [
     BrowserModule,
+    SharedModule,
     AppRoutingModule,
-    RouterModule,
-    HttpClientModule,
-    NgPipesModule,
-    ReactiveFormsModule,
-    NgbModule.forRoot(),
+    SharedModule
   ],
   providers: [
     InfoService,

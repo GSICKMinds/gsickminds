@@ -1,0 +1,13 @@
+<gsic-section-title [title]="title"></gsic-section-title>
+
+<div class="my-3 d-md-flex justify-content-md-between">
+  <h5>{{events?.date | date: 'mediumDate'}}</h5>
+  <button type="button" class="btn btn-primary ">Apuntate a este evento</button>
+</div>
+
+<gsic-talk-list [talks]="events?.talks"></gsic-talk-list>
+
+
+<div class="text-right">
+  <button routerLink="/events" type=" button " class=" text-right btn btn-primary ">Eventos Anteriores</button>
+</div>

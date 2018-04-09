@@ -3,19 +3,20 @@ import { ActivatedRoute } from '@angular/router';
 import { EventService } from '@services';
 
 @Component({
-  selector: 'gsic-event',
-  templateUrl: './event.component.html',
-  styleUrls: ['./event.component.css']
+  selector: 'gsic-talk-list',
+  templateUrl: './talk-list.component.html',
+  styleUrls: ['./talk-list.component.scss']
 })
-export class EventComponent implements OnInit {
-  @Input() event;
+export class TalkListComponent implements OnInit {
+  @Input() talks;
 
   constructor(private route: ActivatedRoute, private eventService: EventService) { }
 
-  ngOnInit() {
+  async ngOnInit() {
     const eventId = this.route.snapshot.paramMap.get('id');
-    console.log(eventId);
-    this.event = this.eventService.getEvent(eventId);
+    this.talks = await this.eventService.getEvent(eventId);
+
+
   }
 
 }
