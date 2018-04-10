@@ -18,30 +18,16 @@
 13 error build Errored while running script in 'gsickminds-client-angular'
 14 error execute callback with error
 15 error Error: Command failed: npm run build
-15 error [0m[0m
-15 error [0m[1m[31mERROR in : Can't bind to 'routerLink' since it isn't a known property of 'a'. ("[39m[22m[0m
-15 error [0m[1m[31m  <div class="nav col-2">[39m[22m[0m
-15 error [0m[1m[31m    <div>[39m[22m[0m
-15 error [0m[1m[31m      <a class="nav-link " [ERROR ->][routerLink]="['/admin', { outlets: { admin: [ 'events'] } }] ">Eventos</a>[39m[22m[0m
-15 error [0m[1m[31m      <a class="nav-link ")[39m[22m[0m
-15 error [0m[1m[31m: Can't bind to 'routerLink' since it isn't a known property of 'a'. ("uterLink]="['/admin', { outlets: { admin: [ 'events'] } }] ">Eventos</a>[39m[22m[0m
-15 error [0m[1m[31m      <a class="nav-link " [ERROR ->][routerLink]="['/admin', { outlets: { admin: [ 'team'] } }] ">Miembros</a>[39m[22m[0m
-15 error [0m[1m[31m      <a class="nav-link "")[39m[22m[0m
-15 error [0m[1m[31m: Can't bind to 'routerLink' since it isn't a known property of 'a'. ("outerLink]="['/admin', { outlets: { admin: [ 'team'] } }] ">Miembros</a>[39m[22m[0m
-15 error [0m[1m[31m      <a class="nav-link " [ERROR ->][routerLink]="['/admin', { outlets: { admin: [ 'info'] } }] ">Información</a>[39m[22m[0m
-15 error [0m[1m[31m    </div>[39m[22m[0m
-15 error [0m[1m[31m  </div>[39m[22m[0m
-15 error [0m[1m[31m")[39m[22m[0m
-15 error [0m[1m[31m: 'router-outlet' is not a known element:[39m[22m[0m
-15 error [0m[1m[31m1. If 'router-outlet' is an Angular component, then verify that it is part of this module.[39m[22m[0m
-15 error [0m[1m[31m2. If 'router-outlet' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas' of this component to suppress this message. ("[39m[22m[0m
-15 error [0m[1m[31m  <div class="col-9">[39m[22m[0m
-15 error [0m[1m[31m[39m[22m[0m
-15 error [0m[1m[31m    [ERROR ->]<router-outlet name="admin"></router-outlet>[39m[22m[0m
-15 error [0m[1m[31m[39m[22m[0m
-15 error [0m[1m[31m  </div>[39m[22m[0m
-15 error [0m[1m[31m")[39m[22m[0m
-15 error [0m[1m[31m[39m[22m[0m
+15 error module.js:540
+15 error     throw err;
+15 error     ^
+15 error
+15 error Error: Cannot find module 'D:\repository\gsickminds\node_modules\@angular\cli\bin\ng'
+15 error     at Function.Module._resolveFilename (module.js:538:15)
+15 error     at Function.Module._load (module.js:468:25)
+15 error     at Function.Module.runMain (module.js:684:10)
+15 error     at startup (bootstrap_node.js:187:16)
+15 error     at bootstrap_node.js:608:3
 15 error npm ERR! code ELIFECYCLE
 15 error npm ERR! errno 1
 15 error npm ERR! gsickminds-client-angular@0.0.0 build: `ng build --prod`
@@ -51,28 +37,11 @@
 15 error npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
 15 error
 15 error npm ERR! A complete log of this run can be found in:
-15 error npm ERR!     C:\Users\silve\AppData\Roaming\npm-cache\_logs\2018-04-09T19_38_15_555Z-debug.log
+15 error npm ERR!     C:\Users\silve\AppData\Roaming\npm-cache\_logs\2018-04-10T10_27_14_133Z-debug.log
 15 error
 15 error > gsickminds-client-angular@0.0.0 build D:\repository\gsickminds\packages\client
 15 error > ng build --prod
 15 error
-15 error
-15 error @angular/compiler-cli@5.2.9 requires typescript@'>=2.4.2 <2.7.0' but 2.8.1 was found instead.
-15 error Using this version can result in undefined behaviour and difficult to debug problems.
-15 error
-15 error Please run the following command to install a compatible version of TypeScript.
-15 error
-15 error     npm install typescript@'>=2.4.2 <2.7.0'
-15 error
-15 error To disable this warning run "ng set warnings.typescriptMismatch=false".
-15 error
-15 error [0mDate: [1m[37m2018-04-09T19:38:15.488Z[39m[22m[0m
-15 error [0mHash: [1m[37m36ecbd250f6fc5f67864[39m[22m[0m
-15 error [0mTime: [1m[37m8166[39m[22mms[0m
-15 error [0mchunk {[1m[33m0[39m[22m} [1m[32mstyles.9371660da200bf67e93d.bundle.css[39m[22m (styles) 179 kB [1m[33m[initial][39m[22m[1m[32m [rendered][39m[22m[0m
-15 error [0mchunk {[1m[33m1[39m[22m} [1m[32mpolyfills.997d8cc03812de50ae67.bundle.js[39m[22m (polyfills) 84 bytes [1m[33m[initial][39m[22m[1m[32m [rendered][39m[22m[0m
-15 error [0mchunk {[1m[33m2[39m[22m} [1m[32mmain.ee32620ecd1edff94184.bundle.js[39m[22m (main) 84 bytes [1m[33m[initial][39m[22m[1m[32m [rendered][39m[22m[0m
-15 error [0mchunk {[1m[33m3[39m[22m} [1m[32minline.318b50c57b4eba3d437b.bundle.js[39m[22m (inline) 796 bytes [1m[33m[entry][39m[22m[1m[32m [rendered][39m[22m[0m
 15 error
 15 error     at Promise.all.then.arr (D:\repository\gsickminds\node_modules\execa\index.js:236:11)
 15 error     at <anonymous>
