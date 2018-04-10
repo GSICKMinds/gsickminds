@@ -8,6 +8,6 @@ import { SpeakersModule } from './modules/speakers/speakers.module';
 import { TalksModule } from './modules/talks/talks.module';
 
 @Module({
-  imports: [MongooseModule.forRoot(process.env.MONGO_URI), EventsModule, MembersModule, AuthModule, InfoModule, SpeakersModule, TalksModule],
+  imports: [MongooseModule.forRoot(process.env.MONGODB_URI), EventsModule, MembersModule, AuthModule, InfoModule, SpeakersModule, TalksModule],
 })
 export class AppModule { }
