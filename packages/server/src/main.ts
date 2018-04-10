@@ -11,7 +11,7 @@ async function bootstrap() {
   app.use(express.static(join(__dirname, 'client')));
   await app.listen(parseInt(process.env.PORT, 10));
 
-  if (process.env.PROD) server.get('*', notFound);
+  if (process.env.NODE_ENV === 'production') server.get('*', notFound);
 
   console.log(`Server start at por ${process.env.PORT}`);
 }
