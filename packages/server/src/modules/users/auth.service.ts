@@ -11,7 +11,7 @@ export class AuthService {
         const user = await this.usersService.findUserAndPassword(auth);
         if (!user) throw new UnauthorizedException();
 
-        const token = jwt.sign({ username: user.username, _id: user._id }, process.env.SECRET, { expiresIn: parseInt(process.env.EXPIRES_IN, 10) });
+        const token = jwt.sign({ username: user.username, _id: user._id }, process.env.SECRET, { expiresIn: process.env.EXPIRES_IN });
 
         return { access_token: token };
 
