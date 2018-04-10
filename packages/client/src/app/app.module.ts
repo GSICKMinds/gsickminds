@@ -34,18 +34,6 @@ import { environment } from 'environments/environment';
 
 import { LoginPageComponent } from './pages/login-page/login-page.component';
 
-@Injectable()
-export class NgbDateNativeAdapter extends NgbDateAdapter<Date> {
-
-  fromModel(date: Date): NgbDateStruct {
-    return (date && date.getFullYear) ? { year: date.getFullYear(), month: date.getMonth() + 1, day: date.getDate() } : null;
-  }
-
-  toModel(date: NgbDateStruct): Date {
-    return date ? new Date(date.year, date.month - 1, date.day) : null;
-  }
-}
-
 
 @NgModule({
   declarations: [
@@ -77,7 +65,6 @@ export class NgbDateNativeAdapter extends NgbDateAdapter<Date> {
     TalksService,
     EventService,
     AuthGuard,
-    { provide: NgbDateAdapter, useClass: NgbDateNativeAdapter },
     { provide: HTTP_INTERCEPTORS, useClass: HeaderInterceptor, multi: true },
     { provide: 'apiUrl', useValue: environment.apiUrl }
   ],

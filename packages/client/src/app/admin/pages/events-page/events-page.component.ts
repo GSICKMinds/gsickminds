@@ -23,6 +23,7 @@ export class EventsPageComponent implements OnInit {
     try {
       const result = await modalRef.result;
       delete result._id;
+      console.log(result);
       await this.eventService.create(result);
       this.events = await this.eventService.getEvents();
     } catch (e) { }
