@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { TeamService } from '@services/team.service';
+import { Member } from '@models/classes';
+import { MemberDialogComponent } from '../../dialogs/member-dialog/member-dialog.component';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'gsic-members-page',
@@ -6,10 +10,29 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./members-page.component.scss']
 })
 export class MembersPageComponent implements OnInit {
+  members;
 
-  constructor() { }
+  constructor(private teamService: TeamService, private modalService: NgbModal) { }
 
-  ngOnInit() {
+  async ngOnInit() {
+    this.getMembers();
+  }
+
+  async getMembers() {
+    let membersArray = await this.teamService.getMembers();
+    this.members = membersArray.map(member => {
+      delete member.social
+      return member;
+    });
+  }
+
+  async addMember() {
+    const modalRef = this.modalService.open(MemberDialogComponent);
+    try {
+      const result = await modalRef.result;
+      await this.teamService.create(result);
+      this.getMembers();
+    } catch (e) { }
   }
 
 }

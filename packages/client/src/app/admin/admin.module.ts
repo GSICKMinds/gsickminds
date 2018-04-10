@@ -17,6 +17,7 @@ import { InfoFormComponent } from './components/info-form/info-form.component';
 import { TalkDialogComponent } from './dialogs/talk-dialog/talk-dialog.component';
 import { EventDialogComponent } from './dialogs/event-dialog/event-dialog.component';
 import { SpeakerDialogComponent } from './dialogs/speaker-dialog/speaker-dialog.component';
+import { MemberDialogComponent } from './dialogs/member-dialog/member-dialog.component';
 
 
 @NgModule({
@@ -25,7 +26,7 @@ import { SpeakerDialogComponent } from './dialogs/speaker-dialog/speaker-dialog.
     SharedModule,
     AdminRoutingModule
   ],
-  declarations: [AdminPageComponent, EventsPageComponent, MembersPageComponent, InfoPageComponent, SidenavComponent, TalksPageComponent, TalkFormComponent, SpeakerFormComponent, EventFormComponent, MemberFormComponent, InfoFormComponent, TalkDialogComponent, EventDialogComponent, SpeakerDialogComponent],
-  entryComponents: [TalkDialogComponent, EventDialogComponent, SpeakerDialogComponent]
+  declarations: [AdminPageComponent, EventsPageComponent, MembersPageComponent, InfoPageComponent, SidenavComponent, TalksPageComponent, TalkFormComponent, SpeakerFormComponent, EventFormComponent, MemberFormComponent, InfoFormComponent, TalkDialogComponent, EventDialogComponent, SpeakerDialogComponent, MemberDialogComponent],
+  entryComponents: [TalkDialogComponent, EventDialogComponent, SpeakerDialogComponent, MemberDialogComponent]
 })
 export class AdminModule { }

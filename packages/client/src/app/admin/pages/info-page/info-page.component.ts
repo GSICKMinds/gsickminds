@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { InfoService } from '@services/info.service';
+import { Info } from '@models/classes';
 
 @Component({
   selector: 'gsic-info-page',
@@ -6,11 +8,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./info-page.component.scss']
 })
 export class InfoPageComponent implements OnInit {
+  info;
 
-  constructor() { }
+  constructor(private infoService: InfoService) { }
 
-  ngOnInit() {
-    console.log('INit')
+  async ngOnInit() {
+    this.info = await this.infoService.getInfo();
   }
 
 }

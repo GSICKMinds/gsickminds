@@ -13,9 +13,8 @@ export class InfoService {
     return this.http.get(`${this.apiUrl}${this.collectionUrl}`).toPromise();
   }
 
-  save(infoId, info) {
-    this.http.put(`${this.apiUrl}${this.collectionUrl}/${infoId}`, info)
-      .subscribe(console.log);
+  update(infoId, info) {
+    return this.http.put(`${this.apiUrl}${this.collectionUrl}/${infoId}`, info).toPromise();
   }
 
 }

@@ -5,10 +5,11 @@ import { InfoPageComponent } from './pages/info-page/info-page.component';
 import { MembersPageComponent } from './pages/members-page/members-page.component';
 import { EventsPageComponent } from './pages/events-page/events-page.component';
 import { TalksPageComponent } from './pages/talks-page/talks-page.component';
+import { AuthGuard } from '@guards/auth.guard';
 
 const routes: Routes = [
   {
-    path: 'panel', component: AdminPageComponent, children: [
+    path: 'panel', component: AdminPageComponent, canActivate: [AuthGuard], children: [
       { path: 'events', component: EventsPageComponent, outlet: 'admin' },
       { path: 'events/:id', component: TalksPageComponent, outlet: 'admin' },
       { path: 'members', component: MembersPageComponent, outlet: 'admin' },

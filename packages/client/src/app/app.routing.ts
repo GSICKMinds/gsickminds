@@ -8,7 +8,7 @@ import { TalkListPageComponent } from './pages/talk-list-page/talk-list-page.com
 
 const appRoutes: Routes = [
 
-    { path: 'login', component: LoginComponent, },
+    { path: 'login', component: LoginComponent },
     {
         path: 'events', children: [
             { path: '', component: EventListPageComponent },

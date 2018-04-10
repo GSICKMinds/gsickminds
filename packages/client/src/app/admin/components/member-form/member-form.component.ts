@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { FormGroup, FormBuilder } from '@angular/forms';
+import { TeamService } from '@services/team.service';
+import { IMember } from '@models/models';
 
 @Component({
   selector: 'gsic-member-form',
@@ -6,10 +9,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./member-form.component.scss']
 })
 export class MemberFormComponent implements OnInit {
+  @Input() member;
 
-  constructor() { }
+  memberForm;
+
+  constructor(private fb: FormBuilder, private teamService: TeamService) { }
 
   ngOnInit() {
+    this.memberForm = this.fb.group(this.member);
   }
 
+  async updateMember() {
+    await this.teamService.update(this.member._id, this.memberForm.value);
+  }
 }

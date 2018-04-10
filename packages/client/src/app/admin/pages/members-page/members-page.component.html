@@ -1,3 +1,22 @@
-<p>
-  members-page works!
-</p>
+<div class="text-right">
+  <button class="btn btn-primary my-2 " (click)="addMember()">Nuevo Miembro</button>
+</div>
+
+<div id="accordion">
+  <div class="card" *ngFor="let member of members; let i = index">
+    <div class="card-header" id="headingOne">
+      <h5 class="mb-0">
+        <button class="btn btn-link" data-toggle="collapse" [attr.data-target]="'#' + i" aria-expanded="true" [attr.aria-controls]="i">
+          {{member?.name}}
+        </button>
+      </h5>
+    </div>
+
+    <div [id]="i" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+      <div class="card-body">
+        <gsic-member-form [member]="member"></gsic-member-form>
+      </div>
+    </div>
+  </div>
+
+</div>

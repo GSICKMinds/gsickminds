@@ -11,7 +11,6 @@ import { jwtMiddleware } from '../common/middlewares/jwt.middleware';
     components: [MembersService],
 })
 
-
 export class MembersModule implements NestModule {
     public configure(consumer: MiddlewaresConsumer) {
         consumer

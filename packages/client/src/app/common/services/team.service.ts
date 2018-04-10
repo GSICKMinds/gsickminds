@@ -20,9 +20,12 @@ export class TeamService {
       .toPromise();
   }
 
-  save(id: string, member) {
-    return this.http.put(`${this.apiUrl}${this.collectionUrl}/${id}`, member)
-      .subscribe(console.log);
+  update(id: string, member) {
+    return this.http.put(`${this.apiUrl}${this.collectionUrl}/${id}`, member).toPromise();
+  }
+
+  create(member) {
+    return this.http.post(`${this.apiUrl}${this.collectionUrl}`, member).toPromise();
   }
 
   private generateSocial(member) {

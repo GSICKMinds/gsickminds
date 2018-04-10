@@ -2,4 +2,5 @@
   <a class="nav-link " [routerLink]="[ { outlets: { admin: [ 'events'] } }] ">Eventos</a>
   <a class="nav-link " [routerLink]="[ { outlets: { admin: [ 'members'] } }] ">Miembros</a>
   <a class="nav-link " [routerLink]="[ { outlets: { admin: [ 'info'] } }] ">Información</a>
+  <a class="nav-link " (click)="authService.logout()">Cerrar Sesión</a>
 </nav>

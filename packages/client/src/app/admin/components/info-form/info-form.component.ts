@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { InfoService } from '@services/info.service';
+import { FormBuilder } from '@angular/forms';
+import { Info } from '@models/classes';
 
 @Component({
   selector: 'gsic-info-form',
@@ -6,10 +9,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./info-form.component.scss']
 })
 export class InfoFormComponent implements OnInit {
+  @Input() info;
+  infoForm;
 
-  constructor() { }
+  constructor(private fb: FormBuilder, private infoService: InfoService) { }
 
   ngOnInit() {
+    this.infoForm = this.fb.group(new Info(this.info));
   }
 
+  async updateInfo() {
+    await this.infoService.update(this.info._id, this.infoForm.value);
+  }
 }
