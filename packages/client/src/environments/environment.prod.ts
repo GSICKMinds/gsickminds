@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  apiUrl: 'https://gsickminds/api'
+  apiUrl: 'https://gsick.herokuapp.com/api'
 };
