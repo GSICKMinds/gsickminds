@@ -8,7 +8,8 @@
 </form>
 
 
-<button class="btn btn-primary">Nuevo Ponente</button>
+<button class="btn btn-primary" (click)="addSpeaker()">Nuevo Ponente</button>
+<button class="btn btn-primary" (click)="updateTalk()">Actualizar Charla</button>
 
 <div *ngFor="let speaker of speakers " class="border border-primary p-4 my-2">
   <gsic-speaker-form [speaker]="speaker"></gsic-speaker-form>

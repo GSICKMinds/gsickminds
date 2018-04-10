@@ -1,4 +1,4 @@
-import { ITalk, ISpeaker } from "@models/models";
+import { ITalk, ISpeaker, IEvent } from "@models/models";
 
 export class Talk implements ITalk {
     title: string;
@@ -39,5 +39,15 @@ export class Speaker implements ISpeaker {
         this.linkedin = speaker.linkedin || '';
         this.github = speaker.github || '';
         this._id = speaker._id || '';
+    }
+}
+
+export class Event implements IEvent {
+    _id: string;
+    date: string;
+
+    constructor(event?) {
+        this._id = event._id || '';
+        this.date = event.date || '';
     }
 }

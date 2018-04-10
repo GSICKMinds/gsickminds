@@ -4,6 +4,9 @@ import { ActivatedRoute } from '@angular/router';
 import { SpeakersService } from '@services/speakers.service';
 import { ITalk } from '@models/models';
 import { Speaker } from '@models/classes';
+import { TalksService } from '@services/talks.service';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { SpeakerDialogComponent } from '../../dialogs/speaker-dialog/speaker-dialog.component';
 
 @Component({
   selector: 'gsic-talk-form',
@@ -17,12 +20,36 @@ export class TalkFormComponent implements OnInit {
 
   constructor(
     private fb: FormBuilder,
+    private talksService: TalksService,
     private speakersService: SpeakersService,
+    private modalService: NgbModal,
     private route: ActivatedRoute) { }
 
-  async ngOnInit() {
+
+  ngOnInit() {
     this.talkForm = this.fb.group(this.talk);
+    this.getSpeakers();
+  }
+
+  async getSpeakers() {
     let speakersArray = await this.speakersService.getAll(this.talk.eventId, this.talk._id);
     this.speakers = speakersArray.map(speaker => new Speaker(speaker));
+  }
+
+  updateTalk() {
+    this.talksService.update(this.talk.eventId, this.talk._id, this.talkForm.value);
+  }
+
+  async addSpeaker() {
+    const modalRef = this.modalService.open(SpeakerDialogComponent);
+    try {
+      const result = await modalRef.result;
+      console.log(result);
+      delete result._id;
+      delete result.talkId;
+      await this.speakersService.create(this.talk.eventId, this.talk._id, result);
+      this.getSpeakers();
+
+    } catch (e) { }
   }
 }

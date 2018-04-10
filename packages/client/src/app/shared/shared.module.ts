@@ -15,6 +15,9 @@ import { SocialListComponent } from './social-list/social-list.component';
 import { SocialItemComponent } from './social-item/social-item.component';
 import { SectionTitleComponent } from './section-title/section-title.component';
 import { SectionContentComponent } from './section-content/section-content.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+
+
 
 
 @NgModule({
@@ -24,13 +27,15 @@ import { SectionContentComponent } from './section-content/section-content.compo
     ReactiveFormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    RouterModule
+    RouterModule,
+    NgbModule.forRoot()
   ],
   exports: [
     NgPipesModule,
     ReactiveFormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    NgbModule,
     MemberListComponent,
     MemberItemComponent,
     TalkListComponent,
@@ -40,7 +45,8 @@ import { SectionContentComponent } from './section-content/section-content.compo
     SocialListComponent,
     SectionTitleComponent,
     SocialItemComponent,
-    SectionContentComponent
+    SectionContentComponent,
+
   ],
   declarations: [
     MemberListComponent,
@@ -53,6 +59,8 @@ import { SectionContentComponent } from './section-content/section-content.compo
     SocialItemComponent,
     SectionTitleComponent,
     SectionContentComponent,
+
+
   ]
 })
 export class SharedModule { }

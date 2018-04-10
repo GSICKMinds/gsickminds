@@ -1,8 +1,0 @@
-<button type="button" (click)="addEvent()" class="btn btn-primary">Añadir</button>
-
-<div class="list-group">
-    <a [routerLink]="['/admin', { outlets: { admin: [ 'events', event._id] } }]" class="list-group-item list-group-item-action"
-        *ngFor="let event of events">
-        {{event.date | date: 'fullDate'}}
-    </a>
-</div>

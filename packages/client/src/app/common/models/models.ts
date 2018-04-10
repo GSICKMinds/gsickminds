@@ -1,6 +1,7 @@
 
 export interface IEvent {
     date: string;
+    _id: string;
 }
 
 export interface ITalk {
