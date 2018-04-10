@@ -10,7 +10,7 @@ import { AppRoutingModule } from './app.routing';
 import { HttpClientModule } from '@angular/common/http';
 import { NgPipesModule } from 'angular-pipes';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { LoginComponent } from './login/login.component';
+
 import { AuthGuard } from '@guards/auth.guard';
 import { HeaderInterceptor } from '@interceptors/header.interceptor';
 import { AdminModule } from './admin/admin.module';
@@ -32,6 +32,8 @@ import { EventListPageComponent } from './pages/event-list-page/event-list-page.
 import { TalkListPageComponent } from './pages/talk-list-page/talk-list-page.component';
 import { environment } from 'environments/environment';
 
+import { LoginPageComponent } from './pages/login-page/login-page.component';
+
 @Injectable()
 export class NgbDateNativeAdapter extends NgbDateAdapter<Date> {
 
@@ -50,7 +52,6 @@ export class NgbDateNativeAdapter extends NgbDateAdapter<Date> {
     AppComponent,
     FooterComponent,
     NavComponent,
-    LoginComponent,
     EventPageComponent,
     MemberPageComponent,
     AboutPageComponent,
@@ -60,7 +61,7 @@ export class NgbDateNativeAdapter extends NgbDateAdapter<Date> {
     MainPageComponent,
     EventListPageComponent,
     TalkListPageComponent,
-
+    LoginPageComponent,
   ],
   imports: [
     BrowserModule,

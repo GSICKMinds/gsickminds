@@ -1,4 +1,4 @@
-import { ITalk, ISpeaker, IEvent, IMember, IInfo } from "@models/models";
+import { ITalk, ISpeaker, IEvent, IMember, IInfo, IAuth } from "@models/models";
 
 export class Talk implements ITalk {
     title: string;
@@ -86,5 +86,14 @@ export class Info implements IInfo {
         this.twitter = info.twitter || '';
         this.telegram = info.telegram || '';
         this.mail = info.mail || '';
+    }
+}
+
+export class Auth implements IAuth {
+    username;
+    password;
+    constructor() {
+        this.username = '';
+        this.password = '';
     }
 }
