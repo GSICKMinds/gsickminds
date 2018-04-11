@@ -35,6 +35,7 @@ import { LoginPageComponent } from './pages/login-page/login-page.component';
 import { SponsorPageComponent } from './pages/sponsor-page/sponsor-page.component';
 import { MessageService } from '@services/message.service';
 import { CatchInterceptor } from '@interceptors/catch.interceptor';
+import { VenuePageComponent } from './pages/venue-page/venue-page.component';
 
 
 @NgModule({
@@ -53,6 +54,7 @@ import { CatchInterceptor } from '@interceptors/catch.interceptor';
     TalkListPageComponent,
     LoginPageComponent,
     SponsorPageComponent,
+    VenuePageComponent,
   ],
   imports: [
     BrowserModule,
