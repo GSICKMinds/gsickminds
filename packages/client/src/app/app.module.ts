@@ -33,6 +33,8 @@ import { TalkListPageComponent } from './pages/talk-list-page/talk-list-page.com
 import { environment } from 'environments/environment';
 import { LoginPageComponent } from './pages/login-page/login-page.component';
 import { SponsorPageComponent } from './pages/sponsor-page/sponsor-page.component';
+import { MessageService } from '@services/message.service';
+import { CatchInterceptor } from '@interceptors/catch.interceptor';
 
 
 @NgModule({
@@ -67,7 +69,9 @@ import { SponsorPageComponent } from './pages/sponsor-page/sponsor-page.componen
     TalksService,
     EventService,
     AuthGuard,
+    MessageService,
     { provide: HTTP_INTERCEPTORS, useClass: HeaderInterceptor, multi: true },
+    { provide: HTTP_INTERCEPTORS, useClass: CatchInterceptor, multi: true },
     { provide: 'apiUrl', useValue: environment.apiUrl }
   ],
 

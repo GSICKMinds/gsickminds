@@ -17,6 +17,7 @@ import { SectionTitleComponent } from './section-title/section-title.component';
 import { SectionContentComponent } from './section-content/section-content.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ConfirmDialogComponent } from './confirm-dialog/confirm-dialog.component';
+import { MessageComponent } from './message/message.component';
 
 
 
@@ -47,7 +48,8 @@ import { ConfirmDialogComponent } from './confirm-dialog/confirm-dialog.componen
     SectionTitleComponent,
     SocialItemComponent,
     SectionContentComponent,
-    ConfirmDialogComponent
+    ConfirmDialogComponent,
+    MessageComponent
   ],
   declarations: [
     MemberListComponent,
@@ -61,6 +63,7 @@ import { ConfirmDialogComponent } from './confirm-dialog/confirm-dialog.componen
     SectionTitleComponent,
     SectionContentComponent,
     ConfirmDialogComponent,
+    MessageComponent,
   ],
   entryComponents: [ConfirmDialogComponent]
 })

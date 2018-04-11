@@ -1,6 +1,8 @@
 import { Injectable, Inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import 'rxjs/add/operator/toPromise';
+import 'rxjs/add/operator/catch';
+import { MessageService } from '@services/message.service';
 
 
 @Injectable()
@@ -8,7 +10,7 @@ export class TeamService {
 
   private collectionUrl = '/members';
 
-  constructor(@Inject('apiUrl') private apiUrl: string, private http: HttpClient) { }
+  constructor(@Inject('apiUrl') private apiUrl: string, private http: HttpClient, private messageService: MessageService) { }
 
   getMembers(): Promise<any[]> {
     return this.http.get<any[]>(`${this.apiUrl}${this.collectionUrl}`)
@@ -21,11 +23,19 @@ export class TeamService {
   }
 
   update(id: string, member) {
-    return this.http.put(`${this.apiUrl}${this.collectionUrl}/${id}`, member).toPromise();
+    return this.http.put(`${this.apiUrl}${this.collectionUrl}/${id}`, member)
+      .do(() => this.messageService.sendMessage({ type: 'success', message: 'Miembro Actualizado' }))
+      .toPromise();
   }
 
   create(member) {
-    return this.http.post(`${this.apiUrl}${this.collectionUrl}`, member).toPromise();
+    return this.http.post(`${this.apiUrl}${this.collectionUrl}`, member)
+      .do(() => this.messageService.sendMessage({ type: 'success', message: 'Miembro Creado' }))
+      .toPromise();
+  }
+
+  delete(memberId) {
+    return this.http.delete(`${this.apiUrl}${this.collectionUrl}/${memberId}`).toPromise();
   }
 
   private generateSocial(member) {

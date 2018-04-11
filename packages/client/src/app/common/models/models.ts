@@ -48,3 +48,14 @@ export interface IInfo {
     telegram: string;
     mail: string;
 }
+
+export interface IAlert {
+    type: string;
+    message: string;
+}
+
+export interface HttpError {
+    statusCode: number;
+    error: string;
+    message: string;
+}

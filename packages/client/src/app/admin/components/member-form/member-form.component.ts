@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { FormGroup, FormBuilder } from '@angular/forms';
 import { TeamService } from '@services/team.service';
 import { IMember } from '@models/models';
@@ -10,6 +10,7 @@ import { IMember } from '@models/models';
 })
 export class MemberFormComponent implements OnInit {
   @Input() member;
+  @Output() remove = new EventEmitter();
 
   memberForm;
 
