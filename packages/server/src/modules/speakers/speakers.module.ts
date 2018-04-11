@@ -9,6 +9,7 @@ import { jwtMiddleware } from '../common/middlewares/jwt.middleware';
     imports: [MongooseModule.forFeature([{ name: 'Speakers', schema: SpeakerSchema }])],
     controllers: [SpeakersController],
     components: [SpeakersService],
+    exports: [MongooseModule],
 })
 export class SpeakersModule implements NestModule {
     public configure(consumer: MiddlewaresConsumer) {
@@ -17,7 +18,7 @@ export class SpeakersModule implements NestModule {
             .forRoutes(
                 { path: ':eventId/talks/:talkId/speakers', method: RequestMethod.POST },
                 { path: ':eventId/talks/:talkId/speakers/:speakerId', method: RequestMethod.PUT },
-
+                { path: ':eventId/talks/:talkId/speakers/:speakerId', method: RequestMethod.DELETE },
         );
     }
 }

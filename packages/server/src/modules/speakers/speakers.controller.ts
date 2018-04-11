@@ -1,4 +1,4 @@
-import { Get, Controller, Post, Put, Body, Param } from '@nestjs/common';
+import { Get, Controller, Post, Put, Body, Param, Delete } from '@nestjs/common';
 import { IEvent, ISpeaker } from 'models';
 import { SpeakersService } from './speakers.service.';
 
@@ -25,5 +25,10 @@ export class SpeakersController {
   @Put(':eventId/talks/:talkId/speakers/:speakerId')
   async update(@Param('talkId') talkId, @Param('speakerId') speakerId, @Body() speaker: ISpeaker) {
     return await this.speakersService.update(speakerId, { ...speaker, talkId });
+  }
+
+  @Delete(':eventId/talks/:talkId/speakers/:speakerId')
+  async delete(@Param('talkId') talkId, @Param('speakerId') speakerId) {
+    await this.speakersService.delete(speakerId);
   }
 }

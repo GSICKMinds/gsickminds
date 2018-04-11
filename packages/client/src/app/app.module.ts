@@ -32,6 +32,7 @@ import { EventListPageComponent } from './pages/event-list-page/event-list-page.
 import { TalkListPageComponent } from './pages/talk-list-page/talk-list-page.component';
 import { environment } from 'environments/environment';
 import { LoginPageComponent } from './pages/login-page/login-page.component';
+import { SponsorPageComponent } from './pages/sponsor-page/sponsor-page.component';
 
 
 @NgModule({
@@ -49,6 +50,7 @@ import { LoginPageComponent } from './pages/login-page/login-page.component';
     EventListPageComponent,
     TalkListPageComponent,
     LoginPageComponent,
+    SponsorPageComponent,
   ],
   imports: [
     BrowserModule,

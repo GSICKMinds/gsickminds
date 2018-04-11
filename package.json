@@ -7,7 +7,8 @@
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
         "prepare": "lerna bootstrap --hoist",
-        "start": "node ./dist/main.js"
+        "start": "node ./dist/main.js",
+        "start:dev": "nodemon ./dist/main.js"
     },
     "repository": {
         "type": "git",
@@ -21,5 +22,8 @@
     "homepage": "https://github.com/silvelo/gsickminds#readme",
     "dependencies": {
         "lerna": "^2.9.1"
+    },
+    "devDependencies": {
+        "nodemon": "^1.17.3"
     }
 }

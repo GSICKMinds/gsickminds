@@ -4,6 +4,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Talk } from '@models/classes';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { TalkDialogComponent } from '../../dialogs/talk-dialog/talk-dialog.component';
+import { ConfirmDialogComponent } from '../../../shared/confirm-dialog/confirm-dialog.component';
 
 @Component({
   selector: 'gsic-talks-page',
@@ -34,6 +35,19 @@ export class TalksPageComponent implements OnInit {
       const id = this.route.snapshot.paramMap.get('id');
       await this.talksService.create(id, result);
       this.getTalks();
+    } catch (e) { }
+  }
+
+  async deleteTalk(talkId) {
+    const eventId = this.route.snapshot.paramMap.get('id');
+    const modalRef = this.modalService.open(ConfirmDialogComponent);
+    try {
+      const result = await modalRef.result;
+      console.log(result);
+      if (result) {
+        await this.talksService.delete(eventId, talkId);
+        this.getTalks();
+      }
     } catch (e) { }
   }
 }

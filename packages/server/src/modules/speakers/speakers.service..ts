@@ -23,4 +23,8 @@ export class SpeakersService {
     async update(id: string, speaker: ISpeaker) {
         return await this.speakerModel.findByIdAndUpdate(id, speaker);
     }
+
+    async delete(speakerId: string) {
+        return await this.speakerModel.findByIdAndRemove(speakerId);
+    }
 }

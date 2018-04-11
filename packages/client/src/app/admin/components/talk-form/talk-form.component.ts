@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { SpeakersService } from '@services/speakers.service';
@@ -7,6 +7,7 @@ import { Speaker } from '@models/classes';
 import { TalksService } from '@services/talks.service';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { SpeakerDialogComponent } from '../../dialogs/speaker-dialog/speaker-dialog.component';
+import { ConfirmDialogComponent } from '../../../shared/confirm-dialog/confirm-dialog.component';
 
 @Component({
   selector: 'gsic-talk-form',
@@ -15,6 +16,7 @@ import { SpeakerDialogComponent } from '../../dialogs/speaker-dialog/speaker-dia
 })
 export class TalkFormComponent implements OnInit {
   @Input() talk: ITalk;
+  @Output() remove = new EventEmitter();
   talkForm;
   speakers;
 
@@ -44,7 +46,7 @@ export class TalkFormComponent implements OnInit {
     const modalRef = this.modalService.open(SpeakerDialogComponent);
     try {
       const result = await modalRef.result;
-      console.log(result);
+
       delete result._id;
       delete result.talkId;
       await this.speakersService.create(this.talk.eventId, this.talk._id, result);

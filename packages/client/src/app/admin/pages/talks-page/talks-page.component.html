@@ -14,7 +14,7 @@
 
         <div [id]="i" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
             <div class="card-body">
-                <gsic-talk-form [talk]="talk"></gsic-talk-form>
+                <gsic-talk-form [talk]="talk" (remove)="deleteTalk($event)"></gsic-talk-form>
             </div>
         </div>
     </div>

@@ -18,7 +18,7 @@
 .settings/
 *.sublime-workspace
 
-
+*.log
 # misc
 /.sass-cache
 /connect.lock

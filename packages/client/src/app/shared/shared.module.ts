@@ -16,6 +16,7 @@ import { SocialItemComponent } from './social-item/social-item.component';
 import { SectionTitleComponent } from './section-title/section-title.component';
 import { SectionContentComponent } from './section-content/section-content.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { ConfirmDialogComponent } from './confirm-dialog/confirm-dialog.component';
 
 
 
@@ -46,7 +47,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     SectionTitleComponent,
     SocialItemComponent,
     SectionContentComponent,
-
+    ConfirmDialogComponent
   ],
   declarations: [
     MemberListComponent,
@@ -59,8 +60,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     SocialItemComponent,
     SectionTitleComponent,
     SectionContentComponent,
-
-
-  ]
+    ConfirmDialogComponent,
+  ],
+  entryComponents: [ConfirmDialogComponent]
 })
 export class SharedModule { }

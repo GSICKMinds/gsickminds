@@ -22,4 +22,8 @@ export class TalksService {
     return this.http.post(`${this.apiUrl}${this.collectionUrl}/${eventId}/talks`, talk).toPromise();
   }
 
+  delete(eventId, talkId) {
+    return this.http.delete(`${this.apiUrl}${this.collectionUrl}/${eventId}/talks/${talkId}`).toPromise();
+  }
+
 }
