@@ -31,7 +31,6 @@ import { EventService } from '@services/event.service';
 import { EventListPageComponent } from './pages/event-list-page/event-list-page.component';
 import { TalkListPageComponent } from './pages/talk-list-page/talk-list-page.component';
 import { environment } from 'environments/environment';
-
 import { LoginPageComponent } from './pages/login-page/login-page.component';
 
 
@@ -55,7 +54,8 @@ import { LoginPageComponent } from './pages/login-page/login-page.component';
     BrowserModule,
     SharedModule,
     AppRoutingModule,
-    SharedModule
+    SharedModule,
+
   ],
   providers: [
     InfoService,
