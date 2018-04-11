@@ -1,5 +1,5 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { NgModule, LOCALE_ID } from '@angular/core';
+import { CommonModule, registerLocaleData } from '@angular/common';
 import { NgPipesModule } from 'angular-pipes';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
@@ -19,8 +19,9 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ConfirmDialogComponent } from './confirm-dialog/confirm-dialog.component';
 import { MessageComponent } from './message/message.component';
 
+import localeEs from '@angular/common/locales/es'; // to register french
 
-
+registerLocaleData(localeEs);
 
 @NgModule({
   imports: [
@@ -65,6 +66,9 @@ import { MessageComponent } from './message/message.component';
     ConfirmDialogComponent,
     MessageComponent,
   ],
-  entryComponents: [ConfirmDialogComponent]
+  entryComponents: [ConfirmDialogComponent],
+  providers: [
+    { provide: LOCALE_ID, useValue: 'es' }
+  ]
 })
 export class SharedModule { }
