@@ -1,6 +1,13 @@
 <div class="mb-3 d-md-flex justify-content-md-between">
   <h4>{{events?.date | date: 'fullDate'}}</h4>
-  <a type="button" target="_blank" class="btn btn-primary" href="http://gsickminds.eventbrite.com/">Apuntate a este evento</a>
+  <div class="d-flex flex-column">
+    <a type="button" target="_blank" class="mb-2 btn btn-primary" href="http://gsickminds.eventbrite.com/">Apuntate a este evento</a>
+
+    <a href="https://twitter.com/intent/tweet?button_hashtag=gsickandbeers&ref_src=twsrc%5Etfw" class="twitter-hashtag-button"
+      data-size="large" data-show-count="false">Tweet #gsickandbeers</a>
+
+  </div>
+
 </div>
 
 <gsic-talk-list [talks]="events?.talks"></gsic-talk-list>
