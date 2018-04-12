@@ -37,13 +37,19 @@ export class TeamService {
   }
 
   private generateSocial(member) {
-    return {
-      ...member,
-      social: {
-        linkedin: member.linkedin,
-        twitter: member.twitter,
-        github: member.github
+    const socialArray = ['linkedin', 'twitter', 'github'];
+    let hasSocial = socialArray.some(key => !!member[key]);
+    if (hasSocial) {
+      member = {
+        ...member,
+        social: {
+          linkedin: member.linkedin,
+          twitter: member.twitter,
+          github: member.github
+        }
       }
     }
+
+    return member;
   }
 }
