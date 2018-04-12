@@ -1,14 +1,18 @@
 <div class="card border-primary rounded">
   <div class="card-header d-flex justify-content-between bg-primary-transparent ">
     <h4 class="card-title">{{talk.title}}</h4>
-    <a [href]="talk.slide" *ngIf="talk.slide" type="button" class="btn btn-outline-primary">
+    <a [href]="talk.slides" *ngIf="talk.slides" type="button" class="btn btn-outline-primary">
       <li class="fa fa-slideshare"></li>
     </a>
   </div>
   <div class="card-body border-bottom border-primary">
-
-
-    <p class="card-text">{{talk.description}}</p>
+    <h6 class="card-subtitle text-muted" *ngIf="talk.duration">
+      <small>
+        <li class="fa fa-clock-o "></li>
+      </small>
+      {{talk.duration}}
+    </h6>
+    <p class="card-text" [innerHTML]="talk.description"></p>
   </div>
 
   <gsic-speaker-list [speakers]="talk.speakers"></gsic-speaker-list>

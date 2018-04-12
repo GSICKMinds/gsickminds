@@ -33,6 +33,11 @@ export class TalkFormComponent implements OnInit {
     this.getSpeakers();
   }
 
+  isTextArea(field) {
+    const textareaArray = ['bio', 'description'];
+    return !textareaArray.includes(field);
+  }
+
   async getSpeakers() {
     let speakersArray = await this.speakersService.getAll(this.talk.eventId, this.talk._id);
     this.speakers = speakersArray.map(speaker => new Speaker(speaker));

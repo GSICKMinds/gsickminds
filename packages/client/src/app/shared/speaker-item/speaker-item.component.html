@@ -14,7 +14,7 @@
     <div class="card-body ">
       <h5 class="card-title">{{speaker.name}}</h5>
       <h6 class="card-subtitle mb-2 text-muted">{{speaker.position}}</h6>
-      <p class="card-text">{{speaker.bio}}</p>
+      <p class="card-text" [innerHTML]="speaker.bio"></p>
     </div>
   </div>
 </div>
