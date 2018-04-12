@@ -1,7 +1,13 @@
 <div class="card border-primary rounded">
+  <div class="card-header d-flex justify-content-between bg-primary-transparent ">
+    <h4 class="card-title">{{talk.title}}</h4>
+    <a [href]="talk.slide" *ngIf="talk.slide" type="button" class="btn btn-outline-primary">
+      <li class="fa fa-slideshare"></li>
+    </a>
+  </div>
   <div class="card-body border-bottom border-primary">
-    <h5 class="card-title">{{talk.title}}</h5>
-    <h6 class="card-subtitle mb-2 text-muted">{{talk.duration}}</h6>
+
+
     <p class="card-text">{{talk.description}}</p>
   </div>
 

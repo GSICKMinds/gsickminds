@@ -11,6 +11,10 @@ export class SpeakersService {
 
   getAll(eventId, talkId) {
     return this.http.get<any[]>(`${this.apiUrl}${this.collectionUrl}/${eventId}/talks/${talkId}/speakers`)
+      .map(speakers => speakers.map(speaker => {
+        speaker.photo = speaker.photo || 'assets/images/team/avatar.png';
+        return speaker;
+      }))
       .map(speakers => speakers.map(this.generateSocial))
       .toPromise();
   }

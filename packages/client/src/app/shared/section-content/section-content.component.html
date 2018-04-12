@@ -1,6 +1,7 @@
 <div [ngClass]="{'bg-primary-transparent py-4' : backgroundColor}">
-  <gsic-section-title *ngIf="title" [title]="title"></gsic-section-title>
+
   <div class="container">
+    <gsic-section-title *ngIf="title" [title]="title"></gsic-section-title>
     <ng-content></ng-content>
   </div>
 </div>
