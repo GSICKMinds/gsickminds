@@ -1,10 +1,2 @@
-<form [formGroup]="infoForm">
-  <div *ngFor="let field of infoForm.value | keys" class="form-group row">
-    <label class="col-sm-2 col-form-label">{{field}}</label>
-    <div class="col-sm-10">
-      <input class="form-control" [formControlName]="field">
-    </div>
-  </div>
-</form>
-
+<gsic-generic-form [form]="infoForm"></gsic-generic-form>
 <button class="btn btn-primary" (click)="updateInfo()">Actualizar Información</button>
