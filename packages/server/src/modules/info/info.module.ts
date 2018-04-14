@@ -16,8 +16,10 @@ export class InfoModule implements NestModule {
         consumer
             .apply(jwtMiddleware)
             .forRoutes(
-                { path: '/info/:id', method: RequestMethod.PUT },
+                { path: '/info', method: RequestMethod.PUT },
+                { path: '/contribution', method: RequestMethod.PUT },
+                { path: '/sponsors', method: RequestMethod.PUT },
+                { path: '/venue', method: RequestMethod.PUT },
         );
     }
 }
-

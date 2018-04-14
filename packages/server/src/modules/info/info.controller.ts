@@ -2,18 +2,47 @@ import { Get, Controller, Post, Put, Delete, Body, Param } from '@nestjs/common'
 import { InfoService } from './info.service';
 import { IInfo } from 'models';
 
-@Controller('info')
+@Controller()
 export class InfoController {
   constructor(private readonly infoService: InfoService) { }
 
-  @Get()
-  async retreive() {
-    return await this.infoService.retreive();
+  @Get('/info')
+  async getInfo() {
+    return await this.infoService.getInfo();
   }
 
-  @Put(':id')
-  async update(@Param('id') id: string, @Body() info: IInfo) {
-    const infoNew = await this.infoService.update(id, info);
-    return infoNew;
+  @Put('/info')
+  async updateInfo(@Body() info: IInfo) {
+    return await this.infoService.updateInfo(info);
+  }
+
+  @Get('/contribution')
+  async getContribution() {
+    return await this.infoService.getContribution();
+  }
+
+  @Put('/contribution')
+  async updateContribution(@Body() contribution) {
+    return await this.infoService.updateContribution(contribution);
+  }
+
+  @Get('/sponsors')
+  async getSponsors() {
+    return await this.infoService.getSponsors();
+  }
+
+  @Put('/sponsors')
+  async updateSponsors(@Body() sponsors) {
+    return await this.infoService.updateSponsors(sponsors);
+  }
+
+  @Get('/venue')
+  async getVenue() {
+    return await this.infoService.getVenue();
+  }
+
+  @Put('/venue')
+  async updateVenue(@Body() venue) {
+    return await this.infoService.updateVenue(venue);
   }
 }
