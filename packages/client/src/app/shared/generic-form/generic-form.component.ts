@@ -15,7 +15,7 @@ export class GenericFormComponent implements OnInit {
   }
 
   isTextArea(field) {
-    const textareaArray = ['bio', 'description'];
+    const textareaArray = ['bio', 'map', 'description', 'talk', 'info', 'sponsor', 'help'];
     return !textareaArray.includes(field);
   }
 }

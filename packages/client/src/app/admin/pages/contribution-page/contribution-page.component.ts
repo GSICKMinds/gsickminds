@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { IContribution } from '@models/models';
 import { InfoService } from '@services/info.service';
 
 @Component({
@@ -8,7 +7,7 @@ import { InfoService } from '@services/info.service';
   styleUrls: ['./contribution-page.component.scss']
 })
 export class ContributionPageComponent implements OnInit {
-  contribution: IContribution;
+  contribution;
 
   constructor(private infoService: InfoService) { }
 

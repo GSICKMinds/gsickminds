@@ -1,7 +1,7 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { InfoService } from '@services/info.service';
+import { Component, Input, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import { Info } from '@models/classes';
+import { InfoService } from '@services/info.service';
 
 @Component({
   selector: 'gsic-info-form',
@@ -19,6 +19,6 @@ export class InfoFormComponent implements OnInit {
   }
 
   async updateInfo() {
-    await this.infoService.update(this.info._id, this.infoForm.value);
+    await this.infoService.updateInfo(this.infoForm.value);
   }
 }

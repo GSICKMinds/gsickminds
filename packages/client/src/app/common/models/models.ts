@@ -59,3 +59,40 @@ export interface HttpError {
     error: string;
     message: string;
 }
+
+
+export interface IData {
+    info: IInfo;
+    venue: IVenue;
+    contribution: IContribution;
+    sponsors: ISponsor[];
+}
+export interface IVenue {
+    place: string;
+    phone: string;
+    map: string;
+    web: string;
+}
+export interface ISponsor {
+    price: string;
+    name: string;
+    features: string;
+    url: string;
+}
+export interface IContribution {
+    info: string;
+    talk: string;
+    sponsor: string;
+    help: string;
+}
+
+export interface IInfo {
+    name: string;
+    description: string;
+    address: string;
+    phone: string;
+    twitter: string;
+    telegram: string;
+    mail: string;
+}
+

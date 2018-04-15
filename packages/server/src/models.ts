@@ -51,7 +51,7 @@ export interface IVenue {
 export interface ISponsors {
     price: string;
     name: string;
-    features: string[];
+    features: string;
     url: string;
 }
 export interface IContribution {

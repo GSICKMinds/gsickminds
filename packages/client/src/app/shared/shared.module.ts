@@ -21,6 +21,7 @@ import { SectionTitleComponent } from './section-title/section-title.component';
 import { SocialItemComponent } from './social-item/social-item.component';
 import { SocialListComponent } from './social-list/social-list.component';
 
+import { SafeHtmlPipe } from '../common/pipes/safe-html.pipe';
 import { GenericFormComponent } from './generic-form/generic-form.component';
 
 registerLocaleData(localeEs);
@@ -53,8 +54,8 @@ registerLocaleData(localeEs);
     SectionContentComponent,
     ConfirmDialogComponent,
     MessageComponent,
-
-    GenericFormComponent,
+    SafeHtmlPipe,
+    GenericFormComponent
   ],
   declarations: [
     MemberListComponent,
@@ -69,8 +70,8 @@ registerLocaleData(localeEs);
     SectionContentComponent,
     ConfirmDialogComponent,
     MessageComponent,
-
-    GenericFormComponent,
+    SafeHtmlPipe,
+    GenericFormComponent
   ],
   entryComponents: [ConfirmDialogComponent],
   providers: [

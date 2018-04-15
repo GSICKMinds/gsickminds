@@ -1,4 +1,4 @@
-import { ITalk, ISpeaker, IEvent, IMember, IInfo, IAuth } from "@models/models";
+import { IAuth, IContribution, IEvent, IInfo, IMember, ISpeaker, ISponsor, ITalk, IVenue } from '@models/models';
 
 export class Talk implements ITalk {
     title: string;
@@ -97,3 +97,47 @@ export class Auth implements IAuth {
         this.password = '';
     }
 }
+
+export class Contribution implements IContribution {
+    info: string;
+    talk: string;
+    sponsor: string;
+    help: string;
+    constructor(contribution) {
+        this.info = contribution.info || '';
+        this.talk = contribution.talk || '';
+        this.sponsor = contribution.sponsor || '';
+        this.help = contribution.help || '';
+    }
+
+}
+
+export class Sponsor implements ISponsor {
+    price: string;
+    name: string;
+    features: string;
+    url: string;
+
+    constructor(sponsor) {
+        this.price = ('price' in sponsor) ? sponsor.price : '';
+        this.name = ('name' in sponsor) ? sponsor.name : '';
+        this.features = ('features' in sponsor) ? sponsor.features : '';
+        this.url = ('url' in sponsor) ? sponsor.url : '';
+    }
+}
+
+export class Venue implements IVenue {
+    place: string;
+    phone: string;
+    map: string;
+    web: string;
+
+    constructor(venue) {
+        this.place = venue.place || '';
+        this.phone = venue.phone || '';
+        this.map = venue.map || '';
+        this.web = venue.web || '';
+    }
+
+}
+

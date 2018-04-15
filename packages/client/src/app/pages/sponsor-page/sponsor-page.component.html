@@ -1,41 +1,15 @@
 <div class="card-deck mb-3 text-center">
-  <div class="card mb-4 box-shadow">
+  <div class="card mb-4 box-shadow" *ngFor="let sponsor of sponsors">
     <div class="card-header">
-      <h4 class="my-0 font-weight-normal">Donación</h4>
+      <h4 class="my-0 font-weight-normal">{{sponsor.name}}</h4>
     </div>
     <div class="card-body">
-      <a href="https://paypal.me/gsickminds" target="_blank" type="button" class="btn btn-lg btn-block btn-outline-primary">Paypal</a>
-    </div>
-  </div>
-  <div class="card mb-4 box-shadow">
-    <div class="card-header">
-      <h4 class="my-0 font-weight-normal">Estandar</h4>
-    </div>
-    <div class="card-body">
-      <h1 class="card-title pricing-card-title">€50
+      <h1 class="card-title pricing-card-title">{{sponsor.price}}
         <small class="text-muted">/ event</small>
       </h1>
-      <ul class="list-unstyled mt-3 mb-4">
-        <li>Logo en web</li>
-        <li>Redes sociales</li>
+      <ul class="list-unstyled mt-3 mb-4" [innerHTML]="sponsor.features">
       </ul>
-      <button type="button" class="btn btn-lg btn-block btn-outline-primary">Contact Us</button>
-    </div>
-  </div>
-  <div class="card mb-4 box-shadow">
-    <div class="card-header">
-      <h4 class="my-0 font-weight-normal">Premiun</h4>
-    </div>
-    <div class="card-body">
-      <h1 class="card-title pricing-card-title">€150
-        <small class="text-muted">/ event</small>
-      </h1>
-      <ul class="list-unstyled mt-3 mb-4">
-        <li>Logo en web</li>
-        <li>Redes sociales</li>
-        <li>Patrocinio de consumiciones</li>
-      </ul>
-      <button type="button" class="btn btn-lg btn-block btn-outline-primary">Contact Us</button>
+      <a [href]="sponsor.url" target="_blank" type="button" class="btn btn-lg btn-block btn-outline-primary">Contact Us</a>
     </div>
   </div>
 </div>

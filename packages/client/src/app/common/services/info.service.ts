@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Inject, Injectable } from '@angular/core';
+import { IData } from '@models/models';
 import 'rxjs/add/operator/toPromise';
 
 @Injectable()
@@ -13,7 +14,9 @@ export class InfoService {
   constructor(@Inject('apiUrl') private apiUrl: string, private http: HttpClient) { }
 
   getInfo() {
-    return this.http.get(`${this.apiUrl}${this.collectionInfoUrl}`).toPromise();
+    return this.http.get<IData>(`${this.apiUrl}${this.collectionInfoUrl}`)
+      .map(data => data.info)
+      .toPromise();
   }
 
   updateInfo(info) {
@@ -21,7 +24,9 @@ export class InfoService {
   }
 
   getVenue() {
-    return this.http.get(`${this.apiUrl}${this.collectionVenueUrl}`).toPromise();
+    return this.http.get<IData>(`${this.apiUrl}${this.collectionVenueUrl}`)
+      .map(data => data.venue)
+      .toPromise();
   }
 
   updateVenue(venue) {
@@ -29,7 +34,9 @@ export class InfoService {
   }
 
   getContribution() {
-    return this.http.get(`${this.apiUrl}${this.collectionContributionUrl}`).toPromise();
+    return this.http.get<IData>(`${this.apiUrl}${this.collectionContributionUrl}`)
+      .map(data => data.contribution)
+      .toPromise();
   }
 
   updateContribution(contribution) {
@@ -37,7 +44,9 @@ export class InfoService {
   }
 
   getSponsors() {
-    return this.http.get(`${this.apiUrl}${this.collectionSponsorsUrl}`).toPromise();
+    return this.http.get<IData>(`${this.apiUrl}${this.collectionSponsorsUrl}`)
+      .map(data => data.sponsors)
+      .toPromise();
   }
 
   updateSponsors(sponsors) {
