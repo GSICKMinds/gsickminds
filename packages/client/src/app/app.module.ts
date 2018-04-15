@@ -34,6 +34,7 @@ import { LoginPageComponent } from './pages/login-page/login-page.component';
 import { MainPageComponent } from './pages/main-page/main-page.component';
 import { MemberPageComponent } from './pages/member-page/member-page.component';
 import { SponsorPageComponent } from './pages/sponsor-page/sponsor-page.component';
+import { SponsorshipPageComponent } from './pages/sponsorship-page/sponsorship-page.component';
 import { TalkListPageComponent } from './pages/talk-list-page/talk-list-page.component';
 import { VenuePageComponent } from './pages/venue-page/venue-page.component';
 import { SharedModule } from './shared/shared.module';
@@ -55,7 +56,8 @@ import { SharedModule } from './shared/shared.module';
     TalkListPageComponent,
     LoginPageComponent,
     SponsorPageComponent,
-    VenuePageComponent
+    VenuePageComponent,
+    SponsorshipPageComponent
   ],
   imports: [
     BrowserModule,

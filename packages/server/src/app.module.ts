@@ -6,8 +6,18 @@ import { AuthModule } from './modules/users/auth.module';
 import { InfoModule } from './modules/info/info.module';
 import { SpeakersModule } from './modules/speakers/speakers.module';
 import { TalksModule } from './modules/talks/talks.module';
+import { SponsorsModule } from 'modules/sponsors/sponsors.module';
 
 @Module({
-  imports: [MongooseModule.forRoot(process.env.MONGODB_URI), EventsModule, MembersModule, AuthModule, InfoModule, SpeakersModule, TalksModule],
+  imports: [
+    MongooseModule.forRoot(process.env.MONGODB_URI),
+    EventsModule,
+    MembersModule,
+    AuthModule,
+    InfoModule,
+    SpeakersModule,
+    TalksModule,
+    SponsorsModule
+  ],
 })
 export class AppModule { }

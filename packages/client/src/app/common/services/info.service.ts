@@ -8,7 +8,7 @@ export class InfoService {
 
   private collectionInfoUrl = '/info';
   private collectionVenueUrl = '/venue';
-  private collectionSponsorsUrl = '/sponsors';
+  private collectionSponsorsUrl = '/info/sponsors';
   private collectionContributionUrl = '/contribution';
 
   constructor(@Inject('apiUrl') private apiUrl: string, private http: HttpClient) { }

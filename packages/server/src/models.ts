@@ -71,9 +71,18 @@ export interface IInfo {
     mail: string;
 }
 
+export interface ISponsor {
+    name: string;
+    url: string;
+    image: string;
+    active: boolean;
+}
+
 import { Document } from 'mongoose';
 
 export interface User extends Document, IAuth { }
 export interface Data extends Document, IData { }
 export interface Event extends Document, IEvent { }
 export interface Member extends Document, IMember { }
+
+export interface Sponsor extends Document, ISponsor { }

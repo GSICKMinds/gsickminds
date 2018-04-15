@@ -8,12 +8,11 @@ import { InfoService } from '@services/info.service';
   styleUrls: ['./sponsor-page.component.scss']
 })
 export class SponsorPageComponent implements OnInit {
-  sponsors: ISponsor[];
 
-  constructor(private infoService: InfoService) { }
+  constructor() { }
 
-  async ngOnInit() {
-    this.sponsors = await this.infoService.getSponsors();
+  ngOnInit() {
+
   }
 
 }

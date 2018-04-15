@@ -26,12 +26,12 @@ export class InfoController {
     return await this.infoService.updateContribution(contribution);
   }
 
-  @Get('/sponsors')
+  @Get('/info/sponsors')
   async getSponsors() {
     return await this.infoService.getSponsors();
   }
 
-  @Put('/sponsors')
+  @Put('/info/sponsors')
   async updateSponsors(@Body() sponsors) {
     return await this.infoService.updateSponsors(sponsors);
   }
