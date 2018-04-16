@@ -16,7 +16,7 @@ export class VenueFormComponent implements OnInit {
   constructor(private infoService: InfoService, private fb: FormBuilder) { }
 
   ngOnInit() {
-    this.venueForm = this.fb.group(new Venue(this.venue));
+    this.venueForm = this.fb.group(new Venue(this.venue || {}));
   }
 
   async updateVenue() {

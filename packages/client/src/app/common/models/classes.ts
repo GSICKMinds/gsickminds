@@ -78,14 +78,15 @@ export class Info implements IInfo {
     twitter: string;
     telegram: string;
     mail: string;
-    constructor(info?) {
-        this.name = info.name || '';
-        this.description = info.description || '';
-        this.address = info.address || '';
-        this.phone = info.phone || '';
-        this.twitter = info.twitter || '';
-        this.telegram = info.telegram || '';
-        this.mail = info.mail || '';
+
+    constructor(info) {
+        this.name = ('name' in info) ? info.name : '';
+        this.description = ('description' in info) ? info.description : '';
+        this.address = ('address' in info) ? info.address : '';
+        this.phone = ('phone' in info) ? info.phone : '';
+        this.twitter = ('twitter' in info) ? info.twitter : '';
+        this.telegram = ('telegram' in info) ? info.telegram : '';
+        this.mail = ('mail' in info) ? info.mail : '';
     }
 }
 
@@ -104,10 +105,10 @@ export class Contribution implements IContribution {
     sponsor: string;
     help: string;
     constructor(contribution) {
-        this.info = contribution.info || '';
-        this.talk = contribution.talk || '';
-        this.sponsor = contribution.sponsor || '';
-        this.help = contribution.help || '';
+        this.info = ('info' in contribution) ? contribution.info : '';
+        this.talk = ('talk' in contribution) ? contribution.talk : '';
+        this.sponsor = ('sponsor' in contribution) ? contribution.sponsor : '';
+        this.help = ('help' in contribution) ? contribution.help : '';
     }
 
 }
@@ -133,10 +134,10 @@ export class Venue implements IVenue {
     web: string;
 
     constructor(venue) {
-        this.place = venue.place || '';
-        this.phone = venue.phone || '';
-        this.map = venue.map || '';
-        this.web = venue.web || '';
+        this.place = ('place' in venue) ? venue.place : '';
+        this.phone = ('phone' in venue) ? venue.phone : '';
+        this.map = ('map' in venue) ? venue.map : '';
+        this.web = ('web' in venue) ? venue.web : '';
     }
 
 }

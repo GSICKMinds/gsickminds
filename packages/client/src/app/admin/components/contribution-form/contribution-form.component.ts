@@ -17,7 +17,7 @@ export class ContributionFormComponent implements OnInit {
   constructor(private infoService: InfoService, private fb: FormBuilder) { }
 
   ngOnInit() {
-    this.contributionForm = this.fb.group(new Contribution(this.contribution));
+    this.contributionForm = this.fb.group(new Contribution(this.contribution || {}));
   }
 
   async updateContribution() {
