@@ -9,12 +9,13 @@ import { Sponsor, ISponsor } from 'models';
 export class SponsorsService {
   constructor(@InjectModel(SponsorSchema) private readonly sponsorSchema: Model<Sponsor>) { }
 
-  async getAll(active: boolean) {
-    return await this.sponsorSchema.find({ active });
+  async getAll(all: boolean) {
+    const query = (all) ? {} : { active: true };
+    return await this.sponsorSchema.find(query);
   }
 
   async create(sponsor: ISponsor) {
-    return await this.sponsorSchema.create(sponsor, { new: true });
+    return await this.sponsorSchema.create(sponsor);
   }
   async update(id: string, update: ISponsor) {
     return await this.sponsorSchema.findByIdAndUpdate(id, update, { new: true });

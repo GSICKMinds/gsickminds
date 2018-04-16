@@ -147,8 +147,10 @@ export class Sponsor implements ISponsor {
     image: string;
     active: boolean;
     type: string;
+    _id: string;
 
     constructor(sponsor) {
+        this._id = sponsor._id || '';
         this.name = sponsor.name || '';
         this.url = sponsor.url || '';
         this.image = sponsor.image || '';

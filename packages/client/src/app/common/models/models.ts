@@ -98,6 +98,7 @@ export interface IInfo {
 
 
 export interface ISponsor {
+    _id: string;
     name: string;
     url: string;
     image: string;

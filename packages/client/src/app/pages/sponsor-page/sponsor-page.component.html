@@ -1,0 +1,12 @@
+<div *ngIf="sponsors">
+    <div *ngFor="let sponsorTypes of sponsors | groupBy: 'type'" class="row justify-content-md-center">
+        <h1 class="text-primary mb-4 border-bottom border-primary">{{sponsorTypes.key}}</h1>
+        <div *ngFor="let sponsor of sponsorTypes.value" class="col-4">
+            <div class="card">
+                <a [href]="sponsor.url" target="_blank">
+                    <img class="card-img-top" [src]="sponsor.image" [alt]="sponsor.name">
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

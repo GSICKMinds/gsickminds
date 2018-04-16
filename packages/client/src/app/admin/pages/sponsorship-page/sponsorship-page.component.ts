@@ -19,18 +19,22 @@ export class SponsorshipPageComponent implements OnInit {
   }
 
   async getSponsors() {
-    this.sponsors = await this.sponsorsService.getAll();
+    this.sponsors = await this.sponsorsService.getAll('true');
   }
 
   async addSponsor() {
     const modalRef = this.modalService.open(SponsorDialogComponent);
     try {
       const result = await modalRef.result;
+      delete result._id;
       await this.sponsorsService.create(result);
       this.getSponsors();
     } catch (e) { }
   }
 
-  updateSponsor() { }
+  async deleteSponsor(sponsorId) {
+    await this.sponsorsService.delete(sponsorId);
+    this.getSponsors();
+  }
 
 }

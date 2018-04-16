@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ISponsorType } from '@models/models';
+import { ISponsorType, ISponsor } from '@models/models';
 import { InfoService } from '@services/info.service';
+import { SponsorsService } from '@services/sponsors.service';
 
 @Component({
   selector: 'gsic-sponsor-page',
@@ -8,11 +9,12 @@ import { InfoService } from '@services/info.service';
   styleUrls: ['./sponsor-page.component.scss']
 })
 export class SponsorPageComponent implements OnInit {
+  sponsors: ISponsor[];
 
-  constructor() { }
+  constructor(private sponsorsService: SponsorsService) { }
 
-  ngOnInit() {
-
+  async ngOnInit() {
+    this.sponsors = await this.sponsorsService.getAll();
   }
 
 }
