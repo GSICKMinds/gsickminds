@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { FormBuilder, FormArray } from '@angular/forms';
-import { Sponsor } from '@models/classes';
+import { FormArray, FormBuilder } from '@angular/forms';
+import { Sponsor, SponsorType } from '@models/classes';
 import { ISponsor } from '@models/models';
 
 @Component({
@@ -15,7 +15,9 @@ export class SponsorFormComponent implements OnInit {
   constructor(private fb: FormBuilder) { }
 
   ngOnInit() {
-    /* this.sponsorForm = this.fb.group(new Sponsor(this.sponsor)); */
+    this.sponsorForm = this.fb.group(new Sponsor(this.sponsor));
   }
+
+  updateSponsor() { }
 
 }

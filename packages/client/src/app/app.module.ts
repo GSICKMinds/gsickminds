@@ -38,6 +38,7 @@ import { SponsorshipPageComponent } from './pages/sponsorship-page/sponsorship-p
 import { TalkListPageComponent } from './pages/talk-list-page/talk-list-page.component';
 import { VenuePageComponent } from './pages/venue-page/venue-page.component';
 import { SharedModule } from './shared/shared.module';
+import { SponsorsService } from '@services/sponsors.service';
 
 
 @NgModule({
@@ -74,6 +75,7 @@ import { SharedModule } from './shared/shared.module';
     TalksService,
     EventService,
     AuthGuard,
+    SponsorsService,
     MessageService,
     { provide: HTTP_INTERCEPTORS, useClass: HeaderInterceptor, multi: true },
     { provide: HTTP_INTERCEPTORS, useClass: CatchInterceptor, multi: true },

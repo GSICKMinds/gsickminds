@@ -14,6 +14,7 @@ import { VenueFormComponent } from './components/venue-form/venue-form.component
 import { EventDialogComponent } from './dialogs/event-dialog/event-dialog.component';
 import { MemberDialogComponent } from './dialogs/member-dialog/member-dialog.component';
 import { SpeakerDialogComponent } from './dialogs/speaker-dialog/speaker-dialog.component';
+import { SponsorDialogComponent } from './dialogs/sponsor-dialog/sponsor-dialog.component';
 import { TalkDialogComponent } from './dialogs/talk-dialog/talk-dialog.component';
 import { SidenavComponent } from './layout/sidenav/sidenav.component';
 import { AdminPageComponent } from './pages/admin-page/admin-page.component';
@@ -22,6 +23,7 @@ import { EventsPageComponent } from './pages/events-page/events-page.component';
 import { InfoPageComponent } from './pages/info-page/info-page.component';
 import { MembersPageComponent } from './pages/members-page/members-page.component';
 import { SponsorsPageComponent } from './pages/sponsors-page/sponsors-page.component';
+import { SponsorshipPageComponent } from './pages/sponsorship-page/sponsorship-page.component';
 import { TalksPageComponent } from './pages/talks-page/talks-page.component';
 import { VenuePageComponent } from './pages/venue-page/venue-page.component';
 
@@ -52,13 +54,16 @@ import { VenuePageComponent } from './pages/venue-page/venue-page.component';
     ContributionPageComponent,
     VenueFormComponent,
     SponsorFormComponent,
-    ContributionFormComponent
+    ContributionFormComponent,
+    SponsorshipPageComponent,
+    SponsorDialogComponent
   ],
   entryComponents: [
     TalkDialogComponent,
     EventDialogComponent,
     SpeakerDialogComponent,
-    MemberDialogComponent
+    MemberDialogComponent,
+    SponsorDialogComponent
   ]
 })
 export class AdminModule { }

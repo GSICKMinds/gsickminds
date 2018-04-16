@@ -6,8 +6,9 @@ import { SponsorsService } from './sponsors.service';
 export class SponsorsController {
   constructor(private readonly sponsorsService: SponsorsService) { }
   @Get()
-  async getAll(@Query('active') active: boolean) {
-    return this.sponsorsService.getAll(active);
+  async getAll(@Query('all') all: string) {
+    const allBoolean = all === 'true';
+    return this.sponsorsService.getAll(allBoolean);
   }
   @Post()
   async create(@Body() sponsor: ISponsor) {

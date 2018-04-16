@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
-import { Sponsor } from '@models/classes';
-import { ISponsor } from '@models/models';
+import { SponsorType } from '@models/classes';
+import { ISponsorType } from '@models/models';
 import { InfoService } from '@services/info.service';
 
 @Component({
@@ -23,16 +23,16 @@ export class SponsorsPageComponent implements OnInit {
 
 
   createItems(sponsors) {
-    return sponsors.map(sponsor => this.fb.group(new Sponsor(sponsor)));
+    return sponsors.map(sponsor => this.fb.group(new SponsorType(sponsor)));
   }
 
   createItem(sponsor = {}) {
-    return this.fb.group(new Sponsor(sponsor));
+    return this.fb.group(new SponsorType(sponsor));
   }
 
   addItem() {
     const items = this.sponsorsForm.get('sponsors');
-    this.sponsorsArray.push(new Sponsor({}));
+    this.sponsorsArray.push(new SponsorType({}));
     items.push(this.createItem());
   }
 

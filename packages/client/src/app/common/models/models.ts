@@ -65,7 +65,7 @@ export interface IData {
     info: IInfo;
     venue: IVenue;
     contribution: IContribution;
-    sponsors: ISponsor[];
+    sponsors: ISponsorType[];
 }
 export interface IVenue {
     place: string;
@@ -73,7 +73,7 @@ export interface IVenue {
     map: string;
     web: string;
 }
-export interface ISponsor {
+export interface ISponsorType {
     price: string;
     name: string;
     features: string;
@@ -94,5 +94,14 @@ export interface IInfo {
     twitter: string;
     telegram: string;
     mail: string;
+}
+
+
+export interface ISponsor {
+    name: string;
+    url: string;
+    image: string;
+    active: boolean;
+    type: string;
 }
 

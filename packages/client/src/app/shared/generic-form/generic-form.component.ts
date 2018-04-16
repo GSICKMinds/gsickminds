@@ -14,8 +14,11 @@ export class GenericFormComponent implements OnInit {
   ngOnInit() {
   }
 
-  isTextArea(field) {
+  switchField(field) {
     const textareaArray = ['bio', 'map', 'description', 'talk', 'info', 'sponsor', 'help'];
-    return !textareaArray.includes(field);
+    const checkboxArray = ['active'];
+    if (textareaArray.includes(field)) { return 'textarea'; }
+    if (checkboxArray.includes(field)) { return 'checkbox'; }
   }
+
 }

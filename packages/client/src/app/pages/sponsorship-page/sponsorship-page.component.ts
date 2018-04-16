@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ISponsor } from '@models/models';
+import { ISponsorType } from '@models/models';
 import { InfoService } from '@services/info.service';
 
 @Component({
@@ -9,7 +9,7 @@ import { InfoService } from '@services/info.service';
 })
 export class SponsorshipPageComponent implements OnInit {
 
-  sponsors: ISponsor[];
+  sponsors: ISponsorType[];
 
   constructor(private infoService: InfoService) { }
 

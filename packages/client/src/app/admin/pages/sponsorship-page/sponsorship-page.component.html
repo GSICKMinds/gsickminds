@@ -1,0 +1,5 @@
+<button (click)="addSponsor()" class="btn btn-primary">Añadir Sponsor</button>
+
+<div *ngFor="let sponsor of sponsors" class="border border-primary m-2 p-2">
+  <gsic-sponsor-form [sponsor]="sponsor"></gsic-sponsor-form>
+</div>

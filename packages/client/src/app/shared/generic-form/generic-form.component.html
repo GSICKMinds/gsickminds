@@ -1,11 +1,10 @@
 <form [formGroup]="form">
   <div class="form-group row" *ngFor="let field of form.value | keys">
     <label class="col-sm-2 col-form-label">{{field}}</label>
-    <div class="col-sm-10">
-      <ng-template #textarea>
-        <textarea class="form-control" rows="4" [formControlName]="field"> </textarea>
-      </ng-template>
-      <input class="form-control" [formControlName]="field" *ngIf="isTextArea(field) else textarea">
+    <div class="col-sm-10" [ngSwitch]="switchField(field)">
+      <textarea *ngSwitchCase="'textarea'" class="form-control" rows="4" [formControlName]="field"></textarea>
+      <input *ngSwitchCase="'checkbox'" class="form-control" [formControlName]="field" type="checkbox">
+      <input *ngSwitchDefault class="form-control" type="text" [formControlName]="field">
     </div>
   </div>
 </form>

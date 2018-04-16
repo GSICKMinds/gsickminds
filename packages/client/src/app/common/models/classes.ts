@@ -1,4 +1,4 @@
-import { IAuth, IContribution, IEvent, IInfo, IMember, ISpeaker, ISponsor, ITalk, IVenue } from '@models/models';
+import { IAuth, IContribution, IEvent, IInfo, IMember, ISpeaker, ISponsor, ISponsorType, ITalk, IVenue } from '@models/models';
 
 export class Talk implements ITalk {
     title: string;
@@ -112,7 +112,7 @@ export class Contribution implements IContribution {
 
 }
 
-export class Sponsor implements ISponsor {
+export class SponsorType implements ISponsorType {
     price: string;
     name: string;
     features: string;
@@ -141,3 +141,18 @@ export class Venue implements IVenue {
 
 }
 
+export class Sponsor implements ISponsor {
+    name: string;
+    url: string;
+    image: string;
+    active: boolean;
+    type: string;
+
+    constructor(sponsor) {
+        this.name = sponsor.name || '';
+        this.url = sponsor.url || '';
+        this.image = sponsor.image || '';
+        this.active = sponsor.active || true;
+        this.type = sponsor.type || '';
+    }
+}
