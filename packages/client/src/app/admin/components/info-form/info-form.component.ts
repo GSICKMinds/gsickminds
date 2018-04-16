@@ -15,7 +15,7 @@ export class InfoFormComponent implements OnInit {
   constructor(private fb: FormBuilder, private infoService: InfoService) { }
 
   ngOnInit() {
-    this.infoForm = this.fb.group(new Info(this.info));
+    this.infoForm = this.fb.group(new Info(this.info || {}));
   }
 
   async updateInfo() {
