@@ -1,11 +1,15 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
+import { AuthGuard } from '@guards/auth.guard';
 import { AdminPageComponent } from './pages/admin-page/admin-page.component';
+import { ContributionPageComponent } from './pages/contribution-page/contribution-page.component';
+import { EventsPageComponent } from './pages/events-page/events-page.component';
 import { InfoPageComponent } from './pages/info-page/info-page.component';
 import { MembersPageComponent } from './pages/members-page/members-page.component';
-import { EventsPageComponent } from './pages/events-page/events-page.component';
+import { SponsorsPageComponent } from './pages/sponsors-page/sponsors-page.component';
+import { SponsorshipPageComponent } from './pages/sponsorship-page/sponsorship-page.component';
 import { TalksPageComponent } from './pages/talks-page/talks-page.component';
-import { AuthGuard } from '@guards/auth.guard';
+import { VenuePageComponent } from './pages/venue-page/venue-page.component';
 
 const routes: Routes = [
   {
@@ -13,7 +17,11 @@ const routes: Routes = [
       { path: 'events', component: EventsPageComponent, outlet: 'admin' },
       { path: 'events/:id', component: TalksPageComponent, outlet: 'admin' },
       { path: 'members', component: MembersPageComponent, outlet: 'admin' },
-      { path: 'info', component: InfoPageComponent, outlet: 'admin' }
+      { path: 'info', component: InfoPageComponent, outlet: 'admin' },
+      { path: 'contribution', component: ContributionPageComponent, outlet: 'admin' },
+      { path: 'sponsorship', component: SponsorshipPageComponent, outlet: 'admin' },
+      { path: 'sponsors', component: SponsorsPageComponent, outlet: 'admin' },
+      { path: 'venue', component: VenuePageComponent, outlet: 'admin' }
     ]
   },
   { path: '**', redirectTo: 'panel' }

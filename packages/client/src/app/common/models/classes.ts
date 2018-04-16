@@ -1,4 +1,4 @@
-import { ITalk, ISpeaker, IEvent, IMember, IInfo, IAuth } from "@models/models";
+import { IAuth, IContribution, IEvent, IInfo, IMember, ISpeaker, ISponsor, ISponsorType, ITalk, IVenue } from '@models/models';
 
 export class Talk implements ITalk {
     title: string;
@@ -95,5 +95,66 @@ export class Auth implements IAuth {
     constructor() {
         this.username = '';
         this.password = '';
+    }
+}
+
+export class Contribution implements IContribution {
+    info: string;
+    talk: string;
+    sponsor: string;
+    help: string;
+    constructor(contribution) {
+        this.info = contribution.info || '';
+        this.talk = contribution.talk || '';
+        this.sponsor = contribution.sponsor || '';
+        this.help = contribution.help || '';
+    }
+
+}
+
+export class SponsorType implements ISponsorType {
+    price: string;
+    name: string;
+    features: string;
+    url: string;
+
+    constructor(sponsor) {
+        this.price = ('price' in sponsor) ? sponsor.price : '';
+        this.name = ('name' in sponsor) ? sponsor.name : '';
+        this.features = ('features' in sponsor) ? sponsor.features : '';
+        this.url = ('url' in sponsor) ? sponsor.url : '';
+    }
+}
+
+export class Venue implements IVenue {
+    place: string;
+    phone: string;
+    map: string;
+    web: string;
+
+    constructor(venue) {
+        this.place = venue.place || '';
+        this.phone = venue.phone || '';
+        this.map = venue.map || '';
+        this.web = venue.web || '';
+    }
+
+}
+
+export class Sponsor implements ISponsor {
+    name: string;
+    url: string;
+    image: string;
+    active: boolean;
+    type: string;
+    _id: string;
+
+    constructor(sponsor) {
+        this._id = sponsor._id || '';
+        this.name = sponsor.name || '';
+        this.url = sponsor.url || '';
+        this.image = sponsor.image || '';
+        this.active = sponsor.active || true;
+        this.type = sponsor.type || '';
     }
 }

@@ -1,41 +1,44 @@
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
-import { NgbModule, NgbDateAdapter, NgbDateStruct } from '@ng-bootstrap/ng-bootstrap';
+import { HttpClientModule } from '@angular/common/http';
+import { Injectable, LOCALE_ID, NgModule } from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule, Injectable, LOCALE_ID } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import { NgbDateAdapter, NgbDateStruct, NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgPipesModule } from 'angular-pipes';
 import { AppComponent } from './app.component';
+import { AppRoutingModule } from './app.routing';
 import { FooterComponent } from './layout/footer/footer.component';
 import { NavComponent } from './layout/nav/nav.component';
-import { AppRoutingModule } from './app.routing';
-import { HttpClientModule } from '@angular/common/http';
-import { NgPipesModule } from 'angular-pipes';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AuthGuard } from '@guards/auth.guard';
+import { CatchInterceptor } from '@interceptors/catch.interceptor';
 import { HeaderInterceptor } from '@interceptors/header.interceptor';
+import { AuthService } from '@services/auth.service';
+import { EventService } from '@services/event.service';
+import { InfoService } from '@services/info.service';
+import { MessageService } from '@services/message.service';
+import { SpeakersService } from '@services/speakers.service';
+import { TalksService } from '@services/talks.service';
+import { TeamService } from '@services/team.service';
+import { environment } from 'environments/environment';
 import { AdminModule } from './admin/admin.module';
-import { SharedModule } from './shared/shared.module';
-import { EventPageComponent } from './pages/event-page/event-page.component';
-import { MemberPageComponent } from './pages/member-page/member-page.component';
+
 import { AboutPageComponent } from './pages/about-page/about-page.component';
 import { ContactPageComponent } from './pages/contact-page/contact-page.component';
 import { ContributionPageComponent } from './pages/contribution-page/contribution-page.component';
-import { ImagePageComponent } from './pages/image-page/image-page.component';
-import { MainPageComponent } from './pages/main-page/main-page.component';
-import { InfoService } from '@services/info.service';
-import { AuthService } from '@services/auth.service';
-import { TeamService } from '@services/team.service';
-import { SpeakersService } from '@services/speakers.service';
-import { TalksService } from '@services/talks.service';
-import { EventService } from '@services/event.service';
 import { EventListPageComponent } from './pages/event-list-page/event-list-page.component';
-import { TalkListPageComponent } from './pages/talk-list-page/talk-list-page.component';
-import { environment } from 'environments/environment';
+import { EventPageComponent } from './pages/event-page/event-page.component';
+import { ImagePageComponent } from './pages/image-page/image-page.component';
 import { LoginPageComponent } from './pages/login-page/login-page.component';
+import { MainPageComponent } from './pages/main-page/main-page.component';
+import { MemberPageComponent } from './pages/member-page/member-page.component';
 import { SponsorPageComponent } from './pages/sponsor-page/sponsor-page.component';
-import { MessageService } from '@services/message.service';
-import { CatchInterceptor } from '@interceptors/catch.interceptor';
+import { SponsorshipPageComponent } from './pages/sponsorship-page/sponsorship-page.component';
+import { TalkListPageComponent } from './pages/talk-list-page/talk-list-page.component';
 import { VenuePageComponent } from './pages/venue-page/venue-page.component';
+import { SharedModule } from './shared/shared.module';
+import { SponsorsService } from '@services/sponsors.service';
 
 
 @NgModule({
@@ -55,6 +58,7 @@ import { VenuePageComponent } from './pages/venue-page/venue-page.component';
     LoginPageComponent,
     SponsorPageComponent,
     VenuePageComponent,
+    SponsorshipPageComponent
   ],
   imports: [
     BrowserModule,
@@ -71,6 +75,7 @@ import { VenuePageComponent } from './pages/venue-page/venue-page.component';
     TalksService,
     EventService,
     AuthGuard,
+    SponsorsService,
     MessageService,
     { provide: HTTP_INTERCEPTORS, useClass: HeaderInterceptor, multi: true },
     { provide: HTTP_INTERCEPTORS, useClass: CatchInterceptor, multi: true },

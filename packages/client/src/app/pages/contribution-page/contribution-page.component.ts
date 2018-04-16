@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { IContribution } from '@models/models';
+import { InfoService } from '@services/info.service';
 
 @Component({
   selector: 'gsic-contribution-page',
@@ -6,10 +8,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./contribution-page.component.scss']
 })
 export class ContributionPageComponent implements OnInit {
+  contribution: IContribution;
 
-  constructor() { }
+  constructor(private infoService: InfoService) { }
 
-  ngOnInit() {
+  async ngOnInit() {
+    this.contribution = await this.infoService.getContribution();
   }
 
 }

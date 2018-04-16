@@ -36,6 +36,31 @@ export interface IAuth {
     password: string;
 }
 
+export interface IData {
+    info: IInfo;
+    venue: IVenue;
+    contribution: IContribution;
+    sponsors: ISponsors[];
+}
+export interface IVenue {
+    place: string;
+    phone: string;
+    map: string;
+    web: string;
+}
+export interface ISponsors {
+    price: string;
+    name: string;
+    features: string;
+    url: string;
+}
+export interface IContribution {
+    info: string;
+    talk: string;
+    sponsor: string;
+    help: string;
+}
+
 export interface IInfo {
     name: string;
     description: string;
@@ -46,9 +71,18 @@ export interface IInfo {
     mail: string;
 }
 
+export interface ISponsor {
+    name: string;
+    url: string;
+    image: string;
+    active: boolean;
+}
+
 import { Document } from 'mongoose';
 
 export interface User extends Document, IAuth { }
-export interface Info extends Document, IInfo { }
+export interface Data extends Document, IData { }
 export interface Event extends Document, IEvent { }
 export interface Member extends Document, IMember { }
+
+export interface Sponsor extends Document, ISponsor { }
