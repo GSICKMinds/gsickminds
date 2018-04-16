@@ -1,1 +1,1 @@
-<gsic-contribution-form [contribution]="contribution"></gsic-contribution-form>
+<gsic-contribution-form *ngIf="contribution | isObject" [contribution]="contribution"></gsic-contribution-form>

@@ -14,6 +14,7 @@ export class VenuePageComponent implements OnInit {
 
   async ngOnInit() {
     this.venue = await this.infoService.getVenue();
+    console.log(this.venue)
   }
 
 }

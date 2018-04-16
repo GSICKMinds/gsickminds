@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Inject, Injectable } from '@angular/core';
+import { Contribution, SponsorType, Venue } from '@models/classes';
 import { IData } from '@models/models';
 import 'rxjs/add/operator/toPromise';
 
@@ -25,7 +26,7 @@ export class InfoService {
 
   getVenue() {
     return this.http.get<IData>(`${this.apiUrl}${this.collectionVenueUrl}`)
-      .map(data => data.venue)
+      .map(data => (data && 'venue' in data) ? data.venue : new Venue({}))
       .toPromise();
   }
 
@@ -35,7 +36,7 @@ export class InfoService {
 
   getContribution() {
     return this.http.get<IData>(`${this.apiUrl}${this.collectionContributionUrl}`)
-      .map(data => data.contribution)
+      .map(data => (data && 'contribution' in data) ? data.contribution : new Contribution({}))
       .toPromise();
   }
 
@@ -45,7 +46,7 @@ export class InfoService {
 
   getSponsors() {
     return this.http.get<IData>(`${this.apiUrl}${this.collectionSponsorsUrl}`)
-      .map(data => data.sponsors)
+      .map(data => (data && 'sponsors' in data) ? data.sponsors : [])
       .toPromise();
   }
 

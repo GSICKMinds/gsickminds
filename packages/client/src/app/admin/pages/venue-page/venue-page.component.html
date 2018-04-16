@@ -1,1 +1,1 @@
-<gsic-venue-form [venue]="venue"></gsic-venue-form>
+<gsic-venue-form *ngIf="venue | isObject" [venue]="venue"></gsic-venue-form>
