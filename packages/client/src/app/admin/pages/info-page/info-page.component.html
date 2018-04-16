@@ -1,1 +1,1 @@
-<gsic-info-form [info]="info"></gsic-info-form>
+<gsic-info-form *ngIf="info | isObject" [info]="info"></gsic-info-form>
