@@ -5,7 +5,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 import { NgbDateAdapter, NgbDateStruct, NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { NgPipesModule } from 'angular-pipes';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app.routing';
 import { FooterComponent } from './layout/footer/footer.component';
@@ -65,7 +64,6 @@ import { SponsorsService } from '@services/sponsors.service';
     SharedModule,
     AppRoutingModule,
     SharedModule,
-
   ],
   providers: [
     InfoService,

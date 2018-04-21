@@ -1,8 +1,8 @@
-<div *ngIf="sponsors">
-    <div *ngFor="let sponsorTypes of sponsors | groupBy: 'type'" class="row justify-content-md-center">
+<div *ngIf="sponsors | isArray">
+    <div *ngFor="let sponsorTypes of sponsors | groupBy: 'type' | pairs" class="row justify-content-md-center">
         <div>
-            <h1 class="text-primary text-center mb-4 border-bottom border-primary">{{sponsorTypes.key}}</h1>
-            <div *ngFor="let sponsor of sponsorTypes.value" class="col-4">
+            <h1 class="text-primary text-center mb-4 border-bottom border-primary">{{sponsorTypes[0]}}</h1>
+            <div *ngFor="let sponsor of sponsorTypes[1]" class="col-4">
 
                 <a [href]="sponsor.url" target="_blank">
                     <img class="img-responsive" [src]="sponsor.image" [alt]="sponsor.name">
