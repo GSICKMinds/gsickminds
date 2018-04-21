@@ -3,7 +3,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { LOCALE_ID, NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
-import { NgPipesModule } from 'angular-pipes';
+import {NgPipesModule} from 'ngx-pipes';
 import { MemberItemComponent } from './member-item/member-item.component';
 import { MemberListComponent } from './member-list/member-list.component';
 import { SpeakerItemComponent } from './speaker-item/speaker-item.component';
@@ -31,14 +31,12 @@ registerLocaleData(localeEs);
     CommonModule,
     NgPipesModule,
     ReactiveFormsModule,
-    ReactiveFormsModule,
     HttpClientModule,
     RouterModule,
     NgbModule.forRoot()
   ],
   exports: [
     NgPipesModule,
-    ReactiveFormsModule,
     ReactiveFormsModule,
     HttpClientModule,
     NgbModule,
