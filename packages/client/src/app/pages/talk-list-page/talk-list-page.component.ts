@@ -1,6 +1,7 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { EventService } from '@services/event.service';
+import { SponsorsService } from '@services/sponsors.service';
 
 @Component({
   selector: 'gsic-talk-list-page',
@@ -10,13 +11,15 @@ import { EventService } from '@services/event.service';
 export class TalkListPageComponent implements OnInit {
   talks;
   event;
+  sponsors = [];
 
-  constructor(private route: ActivatedRoute, private eventService: EventService) { }
+  constructor(private route: ActivatedRoute, private sponsorsService: SponsorsService, private eventService: EventService) { }
 
   async ngOnInit() {
     const eventId = this.route.snapshot.paramMap.get('id');
     this.talks = await this.eventService.getEvent(eventId);
     this.event = await this.eventService.getEventById(eventId);
+    this.sponsors = await this.sponsorsService.getAll(eventId);
   }
 
 }
