@@ -102,7 +102,7 @@ export interface ISponsor {
     name: string;
     url: string;
     image: string;
-    active: boolean;
     type: string;
+    eventId: string;
 }
 

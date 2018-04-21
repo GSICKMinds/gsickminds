@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { ISponsor } from '@models/models';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { SponsorsService } from '@services/sponsors.service';
@@ -12,28 +13,31 @@ import { SponsorDialogComponent } from '../../dialogs/sponsor-dialog/sponsor-dia
 export class SponsorshipPageComponent implements OnInit {
   sponsors: ISponsor[] = [];
 
-  constructor(private sponsorsService: SponsorsService, private modalService: NgbModal) { }
+  constructor(private route: ActivatedRoute, private sponsorsService: SponsorsService, private modalService: NgbModal) { }
 
   ngOnInit() {
     this.getSponsors();
   }
 
   async getSponsors() {
-    this.sponsors = await this.sponsorsService.getAll('true');
+    const eventId = this.route.snapshot.paramMap.get('id');
+    this.sponsors = await this.sponsorsService.getAll(eventId);
   }
 
   async addSponsor() {
     const modalRef = this.modalService.open(SponsorDialogComponent);
     try {
       const result = await modalRef.result;
+      const eventId = this.route.snapshot.paramMap.get('id');
       delete result._id;
-      await this.sponsorsService.create(result);
+      await this.sponsorsService.create(eventId, result);
       this.getSponsors();
     } catch (e) { }
   }
 
   async deleteSponsor(sponsorId) {
-    await this.sponsorsService.delete(sponsorId);
+    const eventId = this.route.snapshot.paramMap.get('id');
+    await this.sponsorsService.delete(eventId, sponsorId);
     this.getSponsors();
   }
 

@@ -6,24 +6,34 @@ import 'rxjs/add/operator/toPromise';
 
 @Injectable()
 export class SponsorsService {
-  private collectionUrl = '/sponsors';
 
   constructor(@Inject('apiUrl') private apiUrl: string, private http: HttpClient) { }
 
-  update(sponsorId: string, sponsor: ISponsor) {
-    return this.http.put(`${this.apiUrl}${this.collectionUrl}/${sponsorId}`, sponsor).toPromise();
+  update(eventId: string, sponsorId: string, sponsor: ISponsor) {
+    return this.http.put(`${this.apiUrl}${this.collectionUrl(eventId, sponsorId)}`, sponsor).toPromise();
   }
 
-  create(sponsor: ISponsor) {
-    return this.http.post(`${this.apiUrl}${this.collectionUrl}`, sponsor).toPromise();
+  create(eventId: string, sponsor: ISponsor) {
+    return this.http.post(`${this.apiUrl}${this.collectionUrl(eventId)}`, sponsor).toPromise();
   }
 
-  getAll(all?: string) {
-    const params = (all) ? new HttpParams().set('all', all) : {};
-    return this.http.get<ISponsor[]>(`${this.apiUrl}${this.collectionUrl}`, { params }).toPromise();
+  getAll(eventId: string) {
+    return this.http.get<ISponsor[]>(`${this.apiUrl}${this.collectionUrl(eventId)}`).toPromise();
   }
-  delete(sponsorId: string) {
-    return this.http.delete(`${this.apiUrl}${this.collectionUrl}/${sponsorId}`).toPromise();
+
+  delete(eventId: string, sponsorId: string) {
+    return this.http.delete(`${this.apiUrl}${this.collectionUrl(eventId, sponsorId)}`).toPromise();
+  }
+
+  private collectionUrl(eventId, sponsorId?) {
+    let url = `/events/${eventId}/sponsors`;
+    if (sponsorId) {
+      url += `/${sponsorId}`;
+    }
+
+    return url;
+
+
   }
 
 }

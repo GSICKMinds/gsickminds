@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ISponsorType, ISponsor } from '@models/models';
+import { ISponsor, ISponsorType } from '@models/models';
+import { EventService } from '@services/event.service';
 import { InfoService } from '@services/info.service';
 import { SponsorsService } from '@services/sponsors.service';
 
@@ -9,12 +10,13 @@ import { SponsorsService } from '@services/sponsors.service';
   styleUrls: ['./sponsor-page.component.scss']
 })
 export class SponsorPageComponent implements OnInit {
-  sponsors: ISponsor[];
+  sponsors: ISponsor[] = [];
 
-  constructor(private sponsorsService: SponsorsService) { }
+  constructor(private eventService: EventService, private sponsorsService: SponsorsService) { }
 
   async ngOnInit() {
-    this.sponsors = await this.sponsorsService.getAll();
+    const event = await this.eventService.getLast();
+    this.sponsors = await this.sponsorsService.getAll(event['_id']);
   }
 
 }

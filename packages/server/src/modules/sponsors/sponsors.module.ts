@@ -16,9 +16,9 @@ export class SponsorsModule implements NestModule {
         consumer
             .apply(jwtMiddleware)
             .forRoutes(
-                { path: 'sponsors', method: RequestMethod.POST },
-                { path: 'sponsors/:id', method: RequestMethod.PUT },
-                { path: 'sponsors/:id', method: RequestMethod.DELETE },
+                { path: ':eventId/sponsors', method: RequestMethod.POST },
+                { path: ':eventId/sponsors/:sponsorId', method: RequestMethod.PUT },
+                { path: ':eventId/sponsors/:sponsorId', method: RequestMethod.DELETE },
         );
     }
 }

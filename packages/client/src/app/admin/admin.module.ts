@@ -26,6 +26,7 @@ import { SponsorsPageComponent } from './pages/sponsors-page/sponsors-page.compo
 import { SponsorshipPageComponent } from './pages/sponsorship-page/sponsorship-page.component';
 import { TalksPageComponent } from './pages/talks-page/talks-page.component';
 import { VenuePageComponent } from './pages/venue-page/venue-page.component';
+import { EventPageComponent } from './pages/event-page/event-page.component';
 
 
 @NgModule({
@@ -56,7 +57,8 @@ import { VenuePageComponent } from './pages/venue-page/venue-page.component';
     SponsorFormComponent,
     ContributionFormComponent,
     SponsorshipPageComponent,
-    SponsorDialogComponent
+    SponsorDialogComponent,
+    EventPageComponent
   ],
   entryComponents: [
     TalkDialogComponent,
