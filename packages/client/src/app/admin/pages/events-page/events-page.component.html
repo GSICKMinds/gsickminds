@@ -2,7 +2,7 @@
   <div class="text-right">
     <button class="btn btn-primary my-2 " (click)="addEvent()">Nuevo Evento</button>
   </div>
-  <div class="list-group" *ngFor="let event of events">
+  <div class="list-group" *ngFor="let event of events | orderBy: '-date'">
     <a type="button" class="list-group-item list-group-item-action" [routerLink]="[event._id]">
       Evento {{event.date | date: 'mediumDate'}}
     </a>
