@@ -64,7 +64,6 @@ import { SponsorsService } from '@services/sponsors.service';
     SharedModule,
     AppRoutingModule,
     SharedModule,
-
   ],
   providers: [
     InfoService,
