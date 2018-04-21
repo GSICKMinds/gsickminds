@@ -75,7 +75,7 @@ export interface ISponsor {
     name: string;
     url: string;
     image: string;
-    active: boolean;
+    eventId: string;
 }
 
 import { Document } from 'mongoose';

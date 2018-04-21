@@ -3,6 +3,7 @@ import { FormArray, FormBuilder } from '@angular/forms';
 import { Sponsor, SponsorType } from '@models/classes';
 import { ISponsor } from '@models/models';
 import { SponsorsService } from '@services/sponsors.service';
+import { ActivatedRoute } from '@angular/router';
 
 
 @Component({
@@ -16,14 +17,15 @@ export class SponsorFormComponent implements OnInit {
 
   sponsorForm;
 
-  constructor(private sponsorsService: SponsorsService, private fb: FormBuilder) { }
+  constructor(private route: ActivatedRoute, private sponsorsService: SponsorsService, private fb: FormBuilder) { }
 
   ngOnInit() {
     this.sponsorForm = this.fb.group(new Sponsor(this.sponsor));
   }
 
   async updateSponsor() {
-    await this.sponsorsService.update(this.sponsor._id, this.sponsorForm.value);
+    const eventId = this.route.snapshot.paramMap.get('id');
+    await this.sponsorsService.update(eventId, this.sponsor._id, this.sponsorForm.value);
   }
 
 }

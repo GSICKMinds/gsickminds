@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { TeamService } from '@services/team.service';
 import { Member } from '@models/classes';
-import { MemberDialogComponent } from '../../dialogs/member-dialog/member-dialog.component';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { TeamService } from '@services/team.service';
 import { ConfirmDialogComponent } from '../../../shared/confirm-dialog/confirm-dialog.component';
+import { MemberDialogComponent } from '../../dialogs/member-dialog/member-dialog.component';
 
 @Component({
   selector: 'gsic-members-page',
@@ -20,9 +20,9 @@ export class MembersPageComponent implements OnInit {
   }
 
   async getMembers() {
-    let membersArray = await this.teamService.getMembers();
+    const membersArray = await this.teamService.getMembers();
     this.members = membersArray.map(member => {
-      delete member.social
+      delete member.social;
       return member;
     });
   }

@@ -1,3 +1,7 @@
 <gsic-section-content title="Charla de {{event?.date | date: 'mediumDate'}}">
   <gsic-talk-list [talks]="talks"></gsic-talk-list>
 </gsic-section-content>
+
+<gsic-section-content title="Sponsors" class="m-2">
+  <gsic-sponsor-page [sponsors]="sponsors"></gsic-sponsor-page>
+</gsic-section-content>

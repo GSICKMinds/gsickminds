@@ -146,7 +146,7 @@ export class Sponsor implements ISponsor {
     name: string;
     url: string;
     image: string;
-    active: boolean;
+    eventId: string;
     type: string;
     _id: string;
 
@@ -155,7 +155,7 @@ export class Sponsor implements ISponsor {
         this.name = sponsor.name || '';
         this.url = sponsor.url || '';
         this.image = sponsor.image || '';
-        this.active = sponsor.active || true;
+        this.eventId = sponsor.eventId || '';
         this.type = sponsor.type || '';
     }
 }

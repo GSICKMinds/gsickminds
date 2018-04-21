@@ -2,26 +2,26 @@ import { Get, Controller, Post, Put, Delete, Body, Param, Query } from '@nestjs/
 import { IInfo, ISponsor } from 'models';
 import { SponsorsService } from './sponsors.service';
 
-@Controller('sponsors')
+@Controller('events')
 export class SponsorsController {
   constructor(private readonly sponsorsService: SponsorsService) { }
-  @Get()
-  async getAll(@Query('all') all: string) {
-    const allBoolean = all === 'true';
-    return this.sponsorsService.getAll(allBoolean);
-  }
-  @Post()
-  async create(@Body() sponsor: ISponsor) {
-    return this.sponsorsService.create(sponsor);
+  @Get(':eventId/sponsors')
+  async getAll(@Param('eventId') eventId: string) {
+    return this.sponsorsService.getAll(eventId);
   }
 
-  @Put(':id')
-  async update(@Param('id') id: string, @Body() sponsor: ISponsor) {
-    return await this.sponsorsService.update(id, sponsor);
+  @Post(':eventId/sponsors')
+  async create(@Param('eventId') eventId: string, @Body() sponsor: ISponsor) {
+    return this.sponsorsService.create(eventId, sponsor);
   }
 
-  @Delete(':id')
-  async delete(@Param('id') id: string) {
-    await this.sponsorsService.delete(id);
+  @Put(':eventId/sponsors/:sponsorId')
+  async update(@Param('eventId') eventId: string, @Param('sponsorId') sponsorId: string, @Body() sponsor: ISponsor) {
+    return await this.sponsorsService.update(sponsorId, sponsor);
+  }
+
+  @Delete(':eventId/sponsors/:sponsorId')
+  async delete(@Param('eventId') eventId: string, @Param('sponsorId') sponsorId: string) {
+    await this.sponsorsService.delete(sponsorId);
   }
 }
