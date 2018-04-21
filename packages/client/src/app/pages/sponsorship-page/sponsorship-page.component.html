@@ -4,7 +4,7 @@
       <h4 class="my-0 font-weight-normal">{{sponsor.name}}</h4>
     </div>
     <div class="card-body">
-      <h1 class="card-title pricing-card-title" *nfIg="sponsor.price">{{sponsor.price}}
+      <h1 class="card-title pricing-card-title" *ngIf="sponsor.price">{{sponsor.price}}
         <small class="text-muted">/ event</small>
       </h1>
       <ul class="list-unstyled mt-3 mb-4" [innerHTML]="sponsor.features">
